@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cầu Rồng Đà Nẵng | Ohdidi</title>
+
+  <!-- FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="style.css">
+<!-- Google Sign-In Library -->
+  <script src="https://accounts.google.com/gapi/client:platform.js" async defer></script>
+  <style>
+
+    /* HERO */
+
+    .dragon-hero{
+      position:relative;
+
+      min-height:85vh;
+
+      display:flex;
+      align-items:center;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.45),
+          rgba(0,0,0,0.6)
+        ),
+
+        url('https://images2.thanhnien.vn/528068263637045248/2025/6/18/the-legend-danang-1-17502421275011965589401.jpg');
+
+      background-size:cover;
+      background-position:center;
+
+      color:white;
+    }
+
+    .dragon-content{
+      max-width:850px;
+    }
+
+    .dragon-tag{
+      display:inline-block;
+
+      padding:12px 22px;
+
+      background:rgba(255,255,255,0.15);
+
+      border-radius:40px;
+
+      backdrop-filter:blur(10px);
+
+      margin-bottom:25px;
+
+      font-weight:600;
+    }
+
+    .dragon-hero h1{
+      font-size:74px;
+
+      line-height:1.1;
+
+      margin-bottom:24px;
+    }
+
+    .dragon-hero p{
+      font-size:20px;
+
+      line-height:1.9;
+
+      color:rgba(255,255,255,0.92);
+    }
+
+    /* GALLERY */
+
+    .dragon-gallery{
+      margin-top:-90px;
+
+      position:relative;
+      z-index:5;
+    }
+
+    .gallery-grid{
+      display:grid;
+
+      grid-template-columns:2fr 1fr 1fr;
+
+      gap:18px;
+    }
+
+    .gallery-grid img{
+      width:100%;
+      height:260px;
+
+      object-fit:cover;
+
+      border-radius:28px;
+
+      box-shadow:0 15px 40px rgba(0,0,0,0.12);
+
+      transition:.35s;
+    }
+
+    .gallery-grid img:hover{
+      transform:translateY(-8px) scale(1.02);
+    }
+
+    .gallery-big{
+      height:540px !important;
+    }
+
+    /* CONTENT */
+
+    .dragon-section{
+      padding:100px 0;
+    }
+
+    .dragon-wrapper{
+      display:grid;
+
+      grid-template-columns:1.2fr .8fr;
+
+      gap:60px;
+
+      align-items:start;
+    }
+
+    .dragon-text h2{
+      font-size:42px;
+
+      color:var(--primary);
+
+      margin-bottom:24px;
+    }
+
+    .dragon-text p{
+      line-height:2;
+
+      color:#555;
+
+      margin-bottom:24px;
+
+      font-size:17px;
+    }
+
+    /* SIDE INFO */
+
+    .dragon-side{
+      display:flex;
+      flex-direction:column;
+
+      gap:24px;
+    }
+
+    .side-box{
+      background:white;
+
+      padding:30px;
+
+      border-radius:28px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .side-box h3{
+      margin-bottom:22px;
+
+      color:var(--primary);
+
+      font-size:26px;
+    }
+
+    .info-item{
+      display:flex;
+      gap:16px;
+
+      margin-bottom:22px;
+    }
+
+    .info-item i{
+      color:var(--secondary);
+
+      font-size:22px;
+
+      margin-top:4px;
+    }
+
+    .info-item p{
+      line-height:1.8;
+
+      color:#666;
+    }
+
+    /* HIGHLIGHT */
+
+    .highlight-banner{
+      margin-top:40px;
+
+      border-radius:34px;
+
+      overflow:hidden;
+
+      position:relative;
+    }
+
+    .highlight-banner img{
+      width:100%;
+      height:420px;
+
+      object-fit:cover;
+    }
+
+    .highlight-overlay{
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0.7)
+        );
+
+      display:flex;
+      align-items:flex-end;
+
+      padding:50px;
+    }
+
+    .highlight-overlay h2{
+      color:white;
+
+      font-size:46px;
+
+      line-height:1.3;
+
+      max-width:700px;
+    }
+
+    /* TIMELINE */
+
+    .timeline{
+      margin-top:80px;
+    }
+
+    .timeline h2{
+      text-align:center;
+
+      font-size:46px;
+
+      color:var(--primary);
+
+      margin-bottom:60px;
+    }
+
+    .timeline-list{
+      display:flex;
+      flex-direction:column;
+
+      gap:30px;
+    }
+
+    .timeline-item{
+      display:flex;
+      gap:25px;
+
+      background:white;
+
+      padding:28px;
+
+      border-radius:28px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .timeline-number{
+      min-width:70px;
+      height:70px;
+
+      border-radius:50%;
+
+      background:var(--primary);
+
+      color:white;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      font-size:28px;
+      font-weight:800;
+    }
+
+    .timeline-content h3{
+      margin-bottom:14px;
+
+      font-size:28px;
+
+      color:var(--primary);
+    }
+
+    .timeline-content p{
+      line-height:1.9;
+
+      color:#666;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:992px){
+
+      .dragon-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-big{
+        height:300px !important;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .dragon-hero{
+        min-height:70vh;
+
+        text-align:center;
+      }
+
+      .dragon-hero h1{
+        font-size:44px;
+      }
+
+      .dragon-hero p{
+        font-size:16px;
+      }
+
+      .timeline-item{
+        flex-direction:column;
+      }
+
+      .highlight-overlay{
+        padding:30px;
+      }
+
+      .highlight-overlay h2{
+        font-size:30px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+     <a href="index.html" class="logo">
+        Go<span>Plan</span>
+     </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">Khám phá</a>
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="experiences.html">Trải nghiệm</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="nav-actions">
+
+        <button class="login-btn" id="openLogin">
+
+            <i class="fa-regular fa-user"></i>
+
+                Đăng nhập
+
+        </button>
+
+        <button class="avatar-btn" id="avatarBtn" style="display: none;">
+
+            <div class="avatar">
+              <span id="avatarText"></span>
+            </div>
+
+        </button>
+
+
+        <a href="itinerary.html" class="btn-primary">
+          Bắt đầu hành trình
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="dragon-hero">
+
+    <div class="container dragon-content">
+
+      <span class="dragon-tag">
+        Biểu tượng du lịch Đà Nẵng
+      </span>
+
+      <h1>
+        Cầu Rồng Đà Nẵng
+      </h1>
+
+      <p>
+        Công trình kiến trúc nổi tiếng bắc qua sông Hàn,
+        biểu tượng hiện đại của thành phố Đà Nẵng với
+        màn trình diễn phun lửa và phun nước cực kỳ ấn tượng.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CONTENT -->
+
+  <section class="dragon-section">
+
+    <div class="container">
+
+      <div class="dragon-wrapper">
+
+        <!-- LEFT -->
+
+        <div class="dragon-text">
+
+          <h2>
+            Biểu tượng hiện đại của Đà Nẵng
+          </h2>
+
+          <p>
+            Cầu Rồng là một trong những công trình nổi bật nhất
+            của thành phố Đà Nẵng. Với thiết kế hình con rồng
+            vươn mình ra biển lớn, cây cầu thể hiện khát vọng
+            phát triển mạnh mẽ của thành phố trẻ năng động.
+          </p>
+
+          <p>
+            Cầu được xây dựng bắc qua sông Hàn với chiều dài
+            hơn 660m và sở hữu hệ thống đèn LED hiện đại,
+            tạo nên khung cảnh lung linh về đêm thu hút hàng
+            triệu du khách mỗi năm.
+          </p>
+
+          <p>
+            Điểm đặc biệt nhất của cầu chính là khả năng
+            phun lửa và phun nước vào mỗi cuối tuần.
+            Đây được xem là hoạt động không thể bỏ lỡ
+            khi đến Đà Nẵng.
+          </p>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="dragon-side">
+
+          <div class="side-box">
+
+            <h3>
+              Thông tin nổi bật
+            </h3>
+
+            <div class="info-item">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+              <p>
+                Bắt qua sông Hàn, nối sân bay Đà Nẵng với biển Mỹ Khê
+                 <a href="https://maps.google.com/?q=Cầu+Rồng+Đà+Nẵng" target="_blank" style="color:#00a0f7">
+                    Xem bản đồ
+                 </a>
+              </p>
+
+            </div>
+
+            <div class="info-item">
+
+              <i class="fa-solid fa-fire"></i>
+
+              <p>
+                Phun lửa và phun nước vào 21h tối Thứ 7 & Chủ nhật
+              </p>
+
+            </div>
+
+            <div class="info-item">
+
+              <i class="fa-solid fa-camera"></i>
+
+              <p>
+                Một trong những điểm check-in nổi tiếng nhất Đà Nẵng
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="side-box">
+
+            <h3>
+              Thời gian đẹp để tham quan
+            </h3>
+
+            <div class="info-item">
+
+              <i class="fa-solid fa-sun"></i>
+
+              <p>
+                17h30 - 18h30 để ngắm hoàng hôn
+              </p>
+
+            </div>
+
+            <div class="info-item">
+
+              <i class="fa-solid fa-moon"></i>
+
+              <p>
+                20h30 - 21h30 để xem cầu phun lửa
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BANNER -->
+
+      <div class="highlight-banner">
+
+        <img
+          src="https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/cau_rong_phun_lua_may_gio_thumb_21f6fc8dae.jpg"
+        >
+
+        <div class="highlight-overlay">
+
+          <h2>
+            Trải nghiệm khoảnh khắc
+            Cầu Rồng phun lửa giữa
+            thành phố Đà Nẵng về đêm
+          </h2>
+
+        </div>
+
+      </div>
+
+      <!-- TIMELINE -->
+
+      <div class="timeline">
+
+        <h2>
+          Trải nghiệm không thể bỏ lỡ
+        </h2>
+
+        <div class="timeline-list">
+
+          <div class="timeline-item">
+
+            <div class="timeline-number">
+              01
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Ngắm cầu về đêm
+              </h3>
+
+              <p>
+                Hệ thống đèn LED hiện đại khiến cầu Rồng trở nên
+                lung linh và nổi bật giữa trung tâm thành phố.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="timeline-item">
+
+            <div class="timeline-number">
+              02
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Check-in cùng sông Hàn
+              </h3>
+
+              <p>
+                Khu vực ven sông Hàn là địa điểm cực đẹp để chụp ảnh,
+                dạo bộ và tận hưởng không khí Đà Nẵng.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="timeline-item">
+
+            <div class="timeline-number">
+              03
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Xem cầu phun lửa
+              </h3>
+
+              <p>
+                Màn trình diễn phun lửa và nước diễn ra lúc 21h
+                cuối tuần luôn thu hút đông đảo khách du lịch.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+<!-- FOOTER -->
+
+ <footer>
+ 
+    <div class="container footer-wrapper">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          Go<span>Plan</span>
+        </div>
+
+        <p>
+          Nền tảng du lịch tự túc giúp bạn
+          khám phá Đà Nẵng như người bản địa.
+        </p>
+
+        <div class="socials">
+
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Khám phá</h4>
+
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestays.html">Homestay</a>
+        <a href="experiences.html">Ẩm thực local</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Hỗ trợ</h4>
+
+        <a href="#">Liên hệ</a>
+        <a href="#">FAQ</a>
+        <a href="#">Chính sách</a>
+        <a href="#">Điều khoản</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h4>Hotline 24/7</h4>
+
+        <p>Zalo / WhatsApp Support</p>
+
+        <h3>+84 354 420 265</h3>
+
+        <span>support@goplan.vn</span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2025 GoPlan.
+      Designed for Local Travelers.
+
+    </div>
+
+  </footer>
+<!-- AUTH MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+  <div class="login-overlay" id="closeLogin"></div>
+
+  <div class="login-box">
+
+    <!-- CLOSE -->
+
+    <button class="close-login" id="closeBtn">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <!-- LOGIN FORM -->
+
+    <div class="auth-form active" id="loginForm">
+
+      <div class="login-header">
+
+        <h2>
+          Đăng nhập GoPlan
+        </h2>
+
+        <p>
+          Tiếp tục hành trình khám phá Đà Nẵng
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="loginName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="loginEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="loginPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="loginSubmitBtn">
+
+          Đăng nhập
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng nhập với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng nhập với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng nhập với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <div class="register-link">
+
+        Chưa có tài khoản?
+
+        <a href="#" id="showRegister">
+          Đăng ký ngay
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- REGISTER FORM -->
+
+    <div class="auth-form" id="registerForm">
+
+      <div class="login-header">
+
+        <h2>
+          Tạo tài khoản mới
+        </h2>
+
+        <p>
+          Bắt đầu trải nghiệm GoPlan như người bản địa
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="registerEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="registerPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Xác nhận mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="confirmPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="registerSubmitBtn">
+
+          Đăng ký tài khoản
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng ký với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng ký với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng ký với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <!-- TERMS -->
+
+      <div class="terms-text">
+
+        Bằng cách tiếp tục, bạn đồng ý với
+        <a href="#">
+          Điều khoản dịch vụ
+        </a>
+        của GoPlan và xác nhận rằng bạn đã đọc
+        <a href="#">
+          Chính sách quyền riêng tư
+        </a>
+        của chúng tôi.
+
+      </div>
+
+      <div class="register-link">
+
+        Đã có tài khoản?
+
+        <a href="#" id="showLogin">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    GoPlan | Homestay Đà Nẵng
+  </title>
+
+  <!-- FONT -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICON -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+<!-- Google Sign-In Library -->
+  <script src="https://accounts.google.com/gapi/client:platform.js" async defer></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+     <a href="index.html" class="logo">
+        Go<span>Plan</span>
+     </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">Khám phá</a>
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="experiences.html">Trải nghiệm</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="nav-actions">
+
+        <button class="login-btn" id="openLogin">
+
+            <i class="fa-regular fa-user"></i>
+
+                Đăng nhập
+
+        </button>
+
+        <button class="avatar-btn" id="avatarBtn" style="display: none;">
+
+            <div class="avatar">
+              <span id="avatarText"></span>
+            </div>
+
+        </button>
+
+
+        <a href="itinerary.html" class="btn-primary">
+          Bắt đầu hành trình
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="itinerary-hero">
+
+    <div class="container">
+
+      <div class="itinerary-hero-content">
+
+        <div class="hero-mini-tag">
+          🏡 Homestay bản địa tại Đà Nẵng
+        </div>
+
+        <h1>
+          Ở như người địa phương,
+          sống chậm giữa Đà Nẵng
+        </h1>
+
+        <p>
+          Khám phá những homestay đẹp,
+          chill, gần biển và mang đậm vibe
+          local dành cho khách du lịch tự túc.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HOMESTAY LIST -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Homestay nổi bật
+        </h2>
+
+        <p>
+          Không gian đẹp, giá hợp lý,
+          phù hợp cho du lịch tự túc.
+        </p>
+
+      </div>
+
+      <div class="homestay-grid">
+
+         <!-- ITEM -->
+
+        <div class="homestay-card">
+
+          <img
+            src="https://i.travelapi.com/hotels/66000000/65370000/65366400/65366311/31d76bff_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+          />
+
+          <div class="homestay-content">
+
+            <span>
+              Sơn Trà • gần biển
+            </span>
+
+            <h3>
+              Chi House Da Nang
+            </h3>
+
+            <p>
+              Vibe tối giản, gần café và biển, cực phù hợp cho nhóm bạn trẻ.
+            </p>
+
+            <div class="price-row">
+
+              <h4>
+                1,626,337đ
+              </h4>
+            <button onclick="window.location.href='Chi House Da Nang-homestay.html'">
+             Đặt ngay
+            </button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="homestay-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1974&auto=format&fit=crop"
+          />
+
+          <div class="homestay-content">
+
+            <span>
+              Sơn Trà • yên tĩnh
+            </span>
+
+            <h3>
+              Melia Vinpearl Đà Nẵng Riverfront
+            </h3>
+
+            <p>
+              Không gian yên tĩnh, gần gũi với thiên nhiên, thích hợp nghỉ dưỡng nhẹ nhàng,
+            </p>
+
+            <div class="price-row">
+
+              <h4>
+                1,712,951đ
+              </h4>
+            <button onclick="window.location.href='Melia Vinpearl.html'">
+             Đặt ngay
+            </button>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- ITEM -->
+
+        <div class="homestay-card">
+
+          <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHqVe85GkygwnXb27Rx2Zh30bJe5IJLFOUvwU4xnkfK7QpttUtNKAjgOMz8WsyUUIfPRsANcH2PHPuza6qHvxB1GfvTkBgfBb8BR9msew-9aLGrkim4mNCnqRjDQs40jvw-yIE=w324-h312-n-k-no"
+          />
+
+          <div class="homestay-content">
+
+            <span>
+              Sông Hàn, Đà Nẵng
+            </span>
+
+            <h3>
+              Loka Home & Yoga
+            </h3>
+
+            <p>
+              Không gian yên tĩnh, gần cầu Tình Yêu,
+              phù hợp nghỉ dưỡng và thư giãn.
+            </p>
+
+            <div class="price-row">
+
+              <h4>
+                754.000đ
+              </h4>
+            <button>
+             Đặt ngay
+            </button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="homestay-card">
+
+          <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEUYjDHwHuA94f0JRT9AVGxr_KC6ZXJrIWEasyxKdTgC8tIjjDj55N4FQOq4aSDDAipU7QCmWaxp4jrUwlftVafLfqPZHhgVNgEgI-pGAqdahUDiyJ3krGHHOSnia4drbALv7K_=w324-h312-n-k-no"
+          />
+
+          <div class="homestay-content">
+
+            <span>
+              Trung tâm Đà Nẵng
+            </span>
+
+            <h3>
+              Truc Home
+            </h3>
+
+            <p>
+              Homestay hiện đại giữa trung tâm,
+              có sân hiên chill và view thành phố.
+            </p>
+
+            <div class="price-row">
+
+              <h4>
+                667.000đ
+              </h4>
+
+              <button>
+                Đặt ngay
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="homestay-card">
+
+          <img
+            src="data:image/jpeg;base64,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"
+          />
+
+          <div class="homestay-content">
+
+            <span>
+              Sông Hàn
+            </span>
+
+            <h3>
+              Sena Home Rooftop
+            </h3>
+
+            <p>
+              Rooftop ngắm cầu Rồng cực đẹp,
+              gần biển Mỹ Khê và phố đi bộ.
+            </p>
+
+            <div class="price-row">
+
+              <h4>
+                427.500đ
+              </h4>
+
+              <button>
+                Đặt ngay
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="homestay-card">
+
+          <img
+            src="data:image/jpeg;base64,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"
+          />
+
+          <div class="homestay-content">
+
+            <span>
+              Sông Hàn
+            </span>
+
+            <h3>
+              Bao Tran Homestay
+            </h3>
+
+            <p>
+              Gần cầu Rồng và bảo tàng Chăm,
+              vibe local, giá hợp lý.
+            </p>
+
+            <div class="price-row">
+
+              <h4>
+                373.700đ
+              </h4>
+
+              <button>
+                Đặt ngay
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="homestay-card">
+
+          <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFQiCD5MtSE-_qUNk51Eg0-FuIkLZHgcrvoZm11qW-4zYZiv9OtgdZHGg0wof0pgDhKT5WpR5zNdMQozezytbAxivEX_B-fHbdAaukS-cPQHPtzz_s1hhMaZDyxYzCK2nGVitSm=w324-h312-n-k-no"
+          />
+
+          <div class="homestay-content">
+
+            <span>
+              Sông Hàn
+            </span>
+
+            <h3>
+              Banana Flower Homestay
+            </h3>
+
+            <p>
+              Không gian nhẹ nhàng,
+              gần Indochina Riverside Mall.
+            </p>
+
+            <div class="price-row">
+
+              <h4>
+                550.000đ
+              </h4>
+
+              <button>
+                Đặt ngay
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="homestay-card">
+
+          <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGnunETFhx32lgV7-Zw7qriwaPA1sLn672hjJCqWdW5-ry0aNtsxyxG4NrkxJLEUkxTiCj8JqOFcfAH36_a9zC6lm9vthleZlL9DLOSTWR2w44CouZInV4BCvPqM8ARY0Ztgq2mgdY6aRlz=w324-h312-n-k-no"
+          />
+
+          <div class="homestay-content">
+
+            <span>
+              Mỹ Khê, Đà Nẵng
+            </span>
+
+            <h3>
+              Hana Homestay Danang
+            </h3>
+
+            <p>
+              Cách biển vài phút đi bộ,
+              cực phù hợp cho nhóm bạn trẻ.
+            </p>
+
+            <div class="price-row">
+
+              <h4>
+                438.000đ
+              </h4>
+
+              <button>
+                Đặt ngay
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- VIEW MORE BUTTON -->
+      <div class="view-more-container">
+        <button class="btn-view-more">
+          Xem thêm kết quả
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LOCAL EXPERIENCE -->
+
+  <section class="about-section">
+
+    <div class="container">
+
+      <div class="about-wrapper">
+
+        <div class="about-content">
+
+          <div class="section-tag">
+            Live Like A Local
+          </div>
+
+          <h2>
+            Không chỉ là nơi ở,
+            mà là trải nghiệm sống
+          </h2>
+
+          <p>
+            GoPlan lựa chọn những homestay
+            mang vibe bản địa, gần biển,
+            gần café local và dễ dàng
+            khám phá cuộc sống Đà Nẵng.
+          </p>
+
+          <div class="about-features">
+
+            <div class="feature-item">
+
+              <i class="fa-solid fa-check"></i>
+
+              Gần biển Mỹ Khê & Sơn Trà
+
+            </div>
+
+            <div class="feature-item">
+
+              <i class="fa-solid fa-check"></i>
+
+              Không gian chill & yên tĩnh
+
+            </div>
+
+            <div class="feature-item">
+
+              <i class="fa-solid fa-check"></i>
+
+              Giá hợp lý cho du lịch tự túc
+
+            </div>
+
+          </div>
+
+          <a href="#" class="btn-primary">
+            Khám phá thêm
+          </a>
+
+        </div>
+
+        <div class="about-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1974&auto=format&fit=crop"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-wrapper">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          Go<span>Plan</span>
+        </div>
+
+        <p>
+          Nền tảng du lịch tự túc giúp bạn
+          khám phá Đà Nẵng như người bản địa.
+        </p>
+
+        <div class="socials">
+
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Khám phá</h4>
+
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestays.html">Homestay</a>
+        <a href="experiences.html">Ẩm thực local</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Hỗ trợ</h4>
+
+        <a href="#">Liên hệ</a>
+        <a href="#">FAQ</a>
+        <a href="#">Chính sách</a>
+        <a href="#">Điều khoản</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h4>Hotline 24/7</h4>
+
+        <p>Zalo / WhatsApp Support</p>
+
+        <h3>+84 354 420 265</h3>
+
+        <span>support@goplan.vn</span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2025 GoPlan.
+      Designed for Local Travelers.
+
+    </div>
+
+  </footer>
+<!-- AUTH MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+  <div class="login-overlay" id="closeLogin"></div>
+
+  <div class="login-box">
+
+    <!-- CLOSE -->
+
+    <button class="close-login" id="closeBtn">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <!-- LOGIN FORM -->
+
+    <div class="auth-form active" id="loginForm">
+
+      <div class="login-header">
+
+        <h2>
+          Đăng nhập GoPlan
+        </h2>
+
+        <p>
+          Tiếp tục hành trình khám phá Đà Nẵng
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="loginName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="loginEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="loginPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="loginSubmitBtn">
+
+          Đăng nhập
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng nhập với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng nhập với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng nhập với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <div class="register-link">
+
+        Chưa có tài khoản?
+
+        <a href="#" id="showRegister">
+          Đăng ký ngay
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- REGISTER FORM -->
+
+    <div class="auth-form" id="registerForm">
+
+      <div class="login-header">
+
+        <h2>
+          Tạo tài khoản mới
+        </h2>
+
+        <p>
+          Bắt đầu trải nghiệm GoPlan như người bản địa
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="registerEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="registerPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Xác nhận mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="confirmPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="registerSubmitBtn">
+
+          Đăng ký tài khoản
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng ký với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng ký với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng ký với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <!-- TERMS -->
+
+      <div class="terms-text">
+
+        Bằng cách tiếp tục, bạn đồng ý với
+        <a href="#">
+          Điều khoản dịch vụ
+        </a>
+        của GoPlan và xác nhận rằng bạn đã đọc
+        <a href="#">
+          Chính sách quyền riêng tư
+        </a>
+        của chúng tôi.
+
+      </div>
+
+      <div class="register-link">
+
+        Đã có tài khoản?
+
+        <a href="#" id="showLogin">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+
+</html>

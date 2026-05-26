@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title> Melia Vinpearl Đà Nẵng Riverfront - GoPlan</title>
+ <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<!-- Google Sign-In Library -->
+  <script src="https://accounts.google.com/gapi/client:platform.js" async defer></script>
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Be Vietnam Pro',sans-serif;
+      background:#f5f7fa;
+      color:#1e293b;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    .container{
+      width:90%;
+      max-width:1300px;
+      margin:auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header{
+      background:white;
+      box-shadow:0 2px 15px rgba(0,0,0,0.05);
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:34px;
+      font-weight:800;
+      color:#0c4a6e;
+    }
+
+    .logo span{
+      color:#f59e0b;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:35px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:#334155;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      color:#0ea5e9;
+    }
+
+    .header-btn{
+      background:#0c4a6e;
+      color:white;
+      padding:14px 24px;
+      border-radius:14px;
+      font-weight:600;
+    }
+
+    /* ================= MAIN ================= */
+
+    .hotel-section{
+      padding:40px 0 70px;
+    }
+
+    /* ================= IMAGE GRID ================= */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:12px;
+      margin-bottom:25px;
+    }
+
+    .gallery img{
+      border-radius:18px;
+      height:100%;
+    }
+
+    .gallery-left img{
+      height:520px;
+    }
+
+    .gallery-right{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:12px;
+    }
+
+    .gallery-right img{
+      height:254px;
+    }
+
+    /* ================= TOP INFO ================= */
+
+    .top-info{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:30px;
+      margin-bottom:30px;
+    }
+
+    .hotel-title{
+      font-size:34px;
+      font-weight:800;
+      margin-bottom:12px;
+      color:#0f172a;
+    }
+
+    .hotel-address{
+      color:#64748b;
+      margin-bottom:14px;
+    }
+
+    .hotel-address a{
+      color:#0ea5e9;
+      margin-left:8px;
+    }
+
+    .stars{
+      color:#f59e0b;
+      margin-left:10px;
+      font-size:18px;
+    }
+
+    .price-box{
+      text-align:right;
+    }
+
+    .price{
+      font-size:42px;
+      font-weight:800;
+      color:#0f172a;
+    }
+
+    .price small{
+      font-size:18px;
+      font-weight:500;
+      color:#64748b;
+    }
+
+    .price-note{
+      color:#64748b;
+      margin:10px 0 18px;
+    }
+
+    .book-btn{
+      background:#f97316;
+      color:white;
+      border:none;
+      padding:16px 40px;
+      border-radius:16px;
+      font-size:18px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .book-btn:hover{
+      background:#ea580c;
+      transform:translateY(-2px);
+    }
+
+    /* ================= GRID INFO ================= */
+
+    .detail-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:22px;
+    }
+
+    .left-column{
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+    }
+
+    .info-card{
+      background:white;
+      border-radius:24px;
+      padding:30px;
+      box-shadow:0 5px 18px rgba(0,0,0,0.05);
+    }
+
+    .card-title{
+      font-size:28px;
+      font-weight:800;
+      margin-bottom:25px;
+      color:#0f172a;
+    }
+
+    /* ================= WHY BOOK ================= */
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:18px;
+    }
+
+    .feature-item{
+      text-align:center;
+    }
+
+    .feature-icon{
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      background:#f1f5f9;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:auto;
+      margin-bottom:14px;
+      font-size:22px;
+      color:#0c4a6e;
+    }
+
+    .feature-item h4{
+      font-size:16px;
+      font-weight:600;
+      color:#334155;
+    }
+
+    /* ================= FACILITIES ================= */
+
+    .facility-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .facility-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:18px;
+      color:#334155;
+    }
+
+    .facility-item i{
+      color:#0c4a6e;
+      font-size:20px;
+    }
+
+    /* ================= PROMOTION ================= */
+
+    .promo-list{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .promo-item{
+      background:#fff7ed;
+      color:#ea580c;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      border:1px dashed #fb923c;
+    }
+
+    /* ================= RIGHT COLUMN ================= */
+
+    .rating-card{
+      background:white;
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 5px 18px rgba(0,0,0,0.05);
+      margin-bottom:22px;
+    }
+
+    .rating-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+
+    .rating-number{
+      background:#4f46e5;
+      color:white;
+      padding:10px 16px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:22px;
+    }
+
+    .rating-text{
+      font-size:28px;
+      font-weight:800;
+      color:#4338ca;
+    }
+
+    .rating-desc{
+      color:#64748b;
+      line-height:1.7;
+    }
+
+    /* ================= LOCATION ================= */
+
+    .location-list{
+      list-style:none;
+    }
+
+    .location-list li{
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      margin-bottom:20px;
+      line-height:1.6;
+      color:#334155;
+    }
+
+    .location-list i{
+      color:#0c4a6e;
+      margin-top:4px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:1100px){
+
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-left img{
+        height:400px;
+      }
+
+      .detail-grid{
+        grid-template-columns:1fr;
+      }
+
+      .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .facility-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .top-info{
+        flex-direction:column;
+      }
+
+      .price-box{
+        width:100%;
+        text-align:left;
+      }
+
+      .feature-grid{
+        grid-template-columns:1fr;
+      }
+
+      .facility-grid{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-left img{
+        height:300px;
+      }
+
+    }
+    .cart-btn{
+  background:#2563eb; /* màu khác */
+  color:white;
+  border:none;
+  padding:16px 30px;
+  border-radius:16px;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+  margin-right:12px;
+}
+
+.cart-btn:hover{
+  background:#334155;
+  transform:translateY(-2px);
+}
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:28px;
+  color:#0f172a;
+}
+
+.section-title span{
+  width:6px;
+  height:32px;
+  border-radius:20px;
+  background:#f97316;
+}
+
+/* ================= EXPLORE ================= */
+
+.explore-row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  padding:16px 0;
+  border-bottom:1px solid #e2e8f0;
+}
+
+.explore-row:first-of-type{
+  border-top:1px solid #e2e8f0;
+}
+
+.border-top{
+  border-top:none;
+}
+
+.explore-label{
+  font-size:16px;
+  font-weight:700;
+  color:#0f172a;
+  line-height:1.5;
+  margin-bottom:12px;
+}
+
+.explore-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.explore-item{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.explore-left{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.explore-left i{
+  font-size:16px;
+  color:#0c4a6e;
+  margin-top:2px;
+  flex-shrink:0;
+}
+
+.explore-left h4{
+  font-size:14px;
+  color:#0f172a;
+  margin-bottom:0;
+  font-weight:600;
+  line-height:1.4;
+}
+
+.explore-left span{
+  background:#f1f5f9;
+  padding:3px 6px;
+  border-radius:4px;
+  color:#64748b;
+  font-size:11px;
+  margin-top:4px;
+}
+
+.explore-item p{
+  font-size:13px;
+  color:#64748b;
+  white-space:normal;
+  font-weight:500;
+}
+
+.map-link{
+  text-align:right;
+  margin-top:10px;
+}
+
+.map-link a{
+  color:#0f172a;
+  font-size:16px;
+  font-weight:500;
+}
+
+.map-link i{
+  margin-left:6px;
+}
+
+/* ================= SECTION EXTENSIONS ================= */
+
+.explore-section{
+  margin-top:40px !important;
+}
+
+/* ================= FACILITY ================= */
+
+.facility-section{
+  margin-bottom:24px;
+}
+
+.facility-section h3{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:16px;
+  margin-bottom:14px;
+  color:#0f172a;
+  font-weight:700;
+}
+
+.facility-section h3 i{
+  display:none;
+}
+
+.facility-grid-v2{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.facility-box{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  color:#334155;
+}
+
+.facility-box i{
+  color:#0c4a6e;
+  font-size:14px;
+  flex-shrink:0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+  .explore-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .facility-grid-v2{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .section-title{
+    font-size:24px;
+  }
+
+  .explore-grid{
+    grid-template-columns:1fr;
+  }
+
+  .facility-grid-v2{
+    grid-template-columns:1fr;
+  }
+
+}
+  </style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+     <a href="index.html" class="logo">
+        Go<span>Plan</span>
+     </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">Khám phá</a>
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="experiences.html">Trải nghiệm</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="nav-actions">
+
+        <button class="login-btn" id="openLogin">
+
+            <i class="fa-regular fa-user"></i>
+
+                Đăng nhập
+
+        </button>
+
+        <button class="avatar-btn" id="avatarBtn" style="display: none;">
+
+            <div class="avatar">
+              <span id="avatarText"></span>
+            </div>
+
+        </button>
+
+
+        <a href="itinerary.html" class="btn-primary">
+          Bắt đầu hành trình
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- MAIN -->
+
+  <section class="hotel-section">
+
+    <div class="container">
+
+      <!-- IMAGE GALLERY -->
+
+      <div class="gallery">
+
+        <div class="gallery-left">
+          <img src="https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/25000000/24320000/24310500/24310425/e6d09582_z.webp">
+        </div>
+
+        <div class="gallery-right">
+          <img src="https://i.travelapi.com/lodging/25000000/24320000/24310500/24310425/903d58ac_z.jpg?impolicy=resizecrop&rw=750&ra=fit">
+          <img src="https://res.klook.com/klook-hotel/image/upload/w_750,c_fill,q_85/travelapi/25000000/24320000/24310500/24310425/e63f91b2_z.webp">
+        </div>
+
+        <div class="gallery-right">
+          <img src="https://i.travelapi.com/lodging/25000000/24320000/24310500/24310425/335b39b1_z.jpg?impolicy=resizecrop&rw=750&ra=fit">
+          <img src="https://res.klook.com/klook-hotel/image/upload/w_750,c_fill,q_85/travelapi/25000000/24320000/24310500/24310425/3873cb02_z.webp">
+        </div>
+
+      </div>
+
+      <!-- HOTEL INFO -->
+
+      <div class="top-info">
+
+        <div>
+
+          <h1 class="hotel-title">
+            Melia Vinpearl Đà Nẵng Riverfront
+            <span class="stars">
+              ★ ★ ★ ★ ★
+            </span>
+          </h1>
+
+          <p class="hotel-address">
+            <i class="fa-solid fa-location-dot"></i>
+            341 Trần Hưng Đạo(P.An Hải Bắc, Q.Sơn Trà), Đà Nẵng
+
+            <a href="https://maps.google.com/?q=Melia+Vinpearl+Da+Nang" target="_blank">
+                
+              Xem bản đồ
+            </a>
+          </p>
+
+        </div>
+
+        <div class="price-box">
+
+          <div class="price">
+            ₫ 1,712,951
+            <small>/ đêm</small>
+          </div>
+
+          <p class="price-note">
+            Giá tốt nhất hôm nay cho 2 người lớn
+          </p>
+         
+
+          <button class="book-btn">
+            <i class="fa-solid fa-phone"></i>
+              Đặt phòng ngay
+          </button>
+        </div>
+
+      </div>
+
+      <!-- DETAIL GRID -->
+
+      <div class="detail-grid">
+
+        <!-- LEFT -->
+
+        <div class="left-column">
+
+          <!-- WHY BOOK -->
+
+          <div class="info-card">
+
+            <h2 class="card-title">
+              Vì sao nên đặt?
+            </h2>
+
+            <div class="feature-grid">
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-people-roof"></i>
+                </div>
+                <h4>Thích hợp cho gia đình</h4>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-car"></i>
+                </div>
+                <h4>Xe đưa đón</h4>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h4>Vị trí đẹp</h4>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-regular fa-face-smile"></i>
+                </div>
+                <h4>Nhân viên thân thiện</h4>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h4>Ăn uống tiện lợi</h4>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- FACILITY -->
+
+          <div class="info-card">
+
+            <h2 class="card-title">
+              Tiện ích nổi bật
+            </h2>
+
+            <div class="facility-grid">
+
+              <div class="facility-item">
+                <i class="fa-solid fa-wifi"></i>
+                WiFi miễn phí
+              </div>
+
+              <div class="facility-item">
+                <i class="fa-solid fa-dumbbell"></i>
+                Gym
+              </div>
+
+              <div class="facility-item">
+                <i class="fa-solid fa-spa"></i>
+                Spa thư giãn
+              </div>
+
+              <div class="facility-item">
+                <i class="fa-solid fa-bell-concierge"></i>
+                Lễ tân 24h
+              </div>
+
+              <div class="facility-item">
+                <i class="fa-solid fa-hot-tub-person"></i>
+                Xông hơi
+              </div>
+
+              <div class="facility-item">
+                <i class="fa-solid fa-utensils"></i>
+                Restaurant
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- PROMOTION -->
+
+          <div class="info-card">
+
+            <h2 class="card-title">
+              Ưu đãi hôm nay
+            </h2>
+
+            <div class="promo-list">
+
+              <div class="promo-item">
+                Giảm ₫200.000
+              </div>
+
+              <div class="promo-item">
+                Giảm 6%
+              </div>
+
+              <div class="promo-item">
+                Giảm ₫200.000 off
+              </div>
+
+              <div class="promo-item">
+                Voucher Spa
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div>
+
+          <!-- RATING -->
+
+          <div class="rating-card">
+
+            <div class="rating-top">
+              <div class="rating-text">
+                Tuyệt vời
+              </div>
+
+            </div>
+
+            <p class="rating-desc">
+              Vị trí ven sông tuyệt vời với tầm nhìn tuyệt đẹp. Nhân viên thân thiện, chuyên nghiệp...
+            </p>
+
+          </div>
+
+          <!-- LOCATION -->
+
+          <div class="rating-card">
+
+            <h2 class="card-title">
+              Khám phá xung quanh
+            </h2>
+
+            <ul class="location-list">
+
+              <li>
+                <i class="fa-solid fa-train"></i>
+                Ga Đà Nẵng — 2.2km
+              </li>
+
+              <li>
+                <i class="fa-solid fa-plane"></i>
+                Sân bay Đà Nẵng — 4.5km
+              </li>
+
+              <li>
+                <i class="fa-solid fa-building"></i>
+                Vincom Ice Rink — 200m
+              </li>
+
+              <li>
+                <i class="fa-solid fa-umbrella-beach"></i>
+                Bãi biển Mỹ Khê — 600m
+              </li>
+
+              <li>
+                <i class="fa-solid fa-bridge"></i>
+                Cầu sông Hàn — 2 phút đi xe
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    <!-- ================= EXPLORE AROUND ================= -->
+
+    <div class="info-card explore-section">
+
+      <h2 class="section-title">
+        <span></span>
+        Khám phá xung quanh
+      </h2>
+
+  <!-- TRANSPORT -->
+
+  <div class="explore-row">
+
+    <div class="explore-label">
+      Phương tiện
+    </div>
+
+    <div class="explore-grid">
+
+      <div class="explore-item">
+        <div class="explore-left">
+          <i class="fa-solid fa-train"></i>
+
+          <div>
+            <h4>Ga Đà Nẵng</h4>
+            <span>Ga tàu hoả</span>
+          </div>
+        </div>
+
+        <p>2.2km</p>
+      </div>
+
+      <div class="explore-item">
+        <div class="explore-left">
+          <i class="fa-solid fa-plane"></i>
+
+          <div>
+            <h4>Sân bay quốc tế Đà Nẵng</h4>
+            <span>Sân bay</span>
+          </div>
+        </div>
+
+        <p>4.5km</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- PLACE -->
+
+  <div class="explore-row border-top">
+
+    <div class="explore-label">
+      Điểm tham quan
+    </div>
+
+    <div class="explore-grid">
+
+      <div class="explore-item">
+        <div class="explore-left">
+          <i class="fa-regular fa-compass"></i>
+
+          <div>
+            <h4>Vincom Ice Rink</h4>
+          </div>
+        </div>
+
+        <p>200m</p>
+      </div>
+
+      <div class="explore-item">
+        <div class="explore-left">
+          <i class="fa-regular fa-compass"></i>
+
+          <div>
+            <h4>Cầu sông Hàn</h4>
+          </div>
+        </div>
+
+        <p>400m</p>
+      </div>
+
+      <div class="explore-item">
+        <div class="explore-left">
+          <i class="fa-regular fa-compass"></i>
+
+          <div>
+            <h4>Bãi biển Mỹ Khê</h4>
+          </div>
+        </div>
+
+        <p>600m</p>
+      </div>
+
+      <div class="explore-item">
+        <div class="explore-left">
+          <i class="fa-regular fa-compass"></i>
+
+          <div>
+            <h4> Da Nang Museum</h4>
+          </div>
+        </div>
+
+        <p>800m</p>
+      </div>
+
+      <div class="explore-item">
+        <div class="explore-left">
+          <i class="fa-regular fa-compass"></i>
+
+          <div>
+            <h4>Fishing Boats</h4>
+          </div>
+        </div>
+
+        <p>600m</p>
+      </div>
+
+      <div class="explore-item">
+        <div class="explore-left">
+          <i class="fa-regular fa-compass"></i>
+
+          <div>
+            <h4>SunriverSpa</h4>
+          </div>
+        </div>
+
+        <p>700m</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="map-link">
+    <a href="https://maps.google.com/?q=Melia+Vinpearl+Da+Nang" target="_blank">
+      Xem bản đồ
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+  </div>
+
+</div>
+
+    <!-- ================= FACILITY ================= -->
+
+    <div class="info-card">
+
+  <h2 class="section-title">
+    <span></span>
+    Dịch vụ và cơ sở vật chất
+  </h2>
+
+  <!-- FEATURE -->
+
+  <div class="facility-section">
+
+    <h3>
+      Tiện ích nổi bật
+    </h3>
+
+    <div class="facility-grid-v2">
+
+      <div class="facility-box">
+        <i class="fa-solid fa-building"></i>
+        Tầng thượng
+      </div>
+
+      <div class="facility-box">
+        <i class="fa-solid fa-utensils"></i>
+        Restaurant
+      </div>
+
+      <div class="facility-box">
+        <i class="fa-solid fa-wifi"></i>
+        WiFi miễn phí
+      </div>
+
+      <div class="facility-box">
+        <i class="fa-solid fa-dumbbell"></i>
+        Trung tâm thể hình
+      </div>
+
+      <div class="facility-box">
+        <i class="fa-solid fa-hot-tub-person"></i>
+        Xông hơi
+      </div>
+
+      <div class="facility-box">
+        <i class="fa-solid fa-bell-concierge"></i>
+        Quầy lễ tân 24 giờ
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- OVERVIEW -->
+
+  <div class="facility-section">
+
+    <h3>
+      <i class="fa-regular fa-rectangle-list"></i>
+      Tổng quan
+    </h3>
+
+    <div class="facility-grid-v2">
+
+      <div class="facility-box">
+        <i class="fa-regular fa-circle-check"></i>
+        Khu vực hút thuốc được chỉ định
+      </div>
+
+      <div class="facility-box">
+        <i class="fa-regular fa-circle-check"></i>
+        Thang máy
+      </div>
+
+    </div>
+
+  </div>
+
+    </div>
+  </section>
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-wrapper">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          Go<span>Plan</span>
+        </div>
+
+        <p>
+          Nền tảng du lịch tự túc giúp bạn
+          khám phá Đà Nẵng như người bản địa.
+        </p>
+
+        <div class="socials">
+
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Khám phá</h4>
+
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestays.html">Homestay</a>
+        <a href="experiences.html">Ẩm thực local</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Hỗ trợ</h4>
+
+        <a href="#">Liên hệ</a>
+        <a href="#">FAQ</a>
+        <a href="#">Chính sách</a>
+        <a href="#">Điều khoản</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h4>Hotline 24/7</h4>
+
+        <p>Zalo / WhatsApp Support</p>
+
+        <h3>+84 354 420 265</h3>
+
+        <span>support@goplan.vn</span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2025 GoPlan.
+      Designed for Local Travelers.
+
+    </div>
+
+  </footer>
+<!-- AUTH MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+  <div class="login-overlay" id="closeLogin"></div>
+
+  <div class="login-box">
+
+    <!-- CLOSE -->
+
+    <button class="close-login" id="closeBtn">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <!-- LOGIN FORM -->
+
+    <div class="auth-form active" id="loginForm">
+
+      <div class="login-header">
+
+        <h2>
+          Đăng nhập GoPlan
+        </h2>
+
+        <p>
+          Tiếp tục hành trình khám phá Đà Nẵng
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="loginName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="loginEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="loginPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="loginSubmitBtn">
+
+          Đăng nhập
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng nhập với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng nhập với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng nhập với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <div class="register-link">
+
+        Chưa có tài khoản?
+
+        <a href="#" id="showRegister">
+          Đăng ký ngay
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- REGISTER FORM -->
+
+    <div class="auth-form" id="registerForm">
+
+      <div class="login-header">
+
+        <h2>
+          Tạo tài khoản mới
+        </h2>
+
+        <p>
+          Bắt đầu trải nghiệm GoPlan như người bản địa
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="registerEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="registerPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Xác nhận mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="confirmPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="registerSubmitBtn">
+
+          Đăng ký tài khoản
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng ký với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng ký với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng ký với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <!-- TERMS -->
+
+      <div class="terms-text">
+
+        Bằng cách tiếp tục, bạn đồng ý với
+        <a href="#">
+          Điều khoản dịch vụ
+        </a>
+        của GoPlan và xác nhận rằng bạn đã đọc
+        <a href="#">
+          Chính sách quyền riêng tư
+        </a>
+        của chúng tôi.
+
+      </div>
+
+      <div class="register-link">
+
+        Đã có tài khoản?
+
+        <a href="#" id="showLogin">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

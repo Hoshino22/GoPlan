@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Mì Quảng Đà Nẵng | GoPlan</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="style.css">
+<!-- Google Sign-In Library -->
+  <script src="https://accounts.google.com/gapi/client:platform.js" async defer></script>
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Be Vietnam Pro',sans-serif;
+      background:#f8fafc;
+      color:#1e293b;
+      line-height:1.8;
+    }
+
+    img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* HERO */
+
+    .hero{
+      position:relative;
+      height:520px;
+      overflow:hidden;
+      margin-top:120px;
+    }
+
+    .hero img{
+      height:100%;
+      filter:brightness(55%);
+    }
+
+    .hero-content{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      text-align:center;
+      color:white;
+      width:90%;
+    }
+
+    .hero-content h1{
+      font-size:60px;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .hero-content p{
+      max-width:850px;
+      margin:auto;
+      font-size:18px;
+      line-height:1.8;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:80px 0;
+    }
+
+    .section-title{
+      font-size:42px;
+      margin-bottom:25px;
+      color:#0f172a;
+      font-weight:800;
+    }
+
+    .section-desc{
+      color:#475569;
+      font-size:17px;
+      margin-bottom:30px;
+    }
+
+    /* GRID */
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:45px;
+      align-items:center;
+    }
+
+    .content-box{
+      background:white;
+      padding:35px;
+      border-radius:24px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .content-box p{
+      margin-bottom:18px;
+      color:#475569;
+    }
+
+    .content-box ul{
+      padding-left:18px;
+      color:#475569;
+    }
+
+    .content-box li{
+      margin-bottom:12px;
+    }
+
+    .rounded-img{
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .rounded-img img{
+      height:100%;
+    }
+
+    /* INFO TAGS */
+
+    .tag-list{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+
+    .tag{
+      background:#fff7ed;
+      color:#ea580c;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    /* RESTAURANT */
+
+    .restaurant-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .restaurant-card{
+      background:white;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 5px 18px rgba(0,0,0,0.06);
+      transition:.3s;
+    }
+
+    .restaurant-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .restaurant-card img{
+      height:240px;
+    }
+
+    .restaurant-content{
+      padding:25px;
+    }
+
+    .restaurant-content h3{
+      font-size:24px;
+      margin-bottom:12px;
+      color:#0f172a;
+    }
+
+    .restaurant-content p{
+      color:#64748b;
+      margin-bottom:12px;
+    }
+
+    .restaurant-content span{
+      display:block;
+      color:#f97316;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+
+    /* QUOTE */
+
+    .quote-section{
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:90px 20px;
+    }
+
+    .quote-section h2{
+      font-size:42px;
+      margin-bottom:25px;
+      line-height:1.5;
+    }
+
+    .quote-section p{
+      max-width:850px;
+      margin:auto;
+      opacity:.9;
+      font-size:18px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:992px){
+
+      .grid-2{
+        grid-template-columns:1fr;
+      }
+
+      .restaurant-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-content h1{
+        font-size:42px;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        height:420px;
+      }
+
+      .hero-content h1{
+        font-size:34px;
+      }
+
+      .section-title{
+        font-size:30px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+     <a href="index.html" class="logo">
+        Go<span>Plan</span>
+     </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">Khám phá</a>
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="experiences.html">Trải nghiệm</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="nav-actions">
+
+        <button class="login-btn" id="openLogin">
+
+            <i class="fa-regular fa-user"></i>
+
+                Đăng nhập
+
+        </button>
+
+        <button class="avatar-btn" id="avatarBtn" style="display: none;">
+
+            <div class="avatar">
+              <span id="avatarText"></span>
+            </div>
+
+        </button>
+
+
+        <a href="itinerary.html" class="btn-primary">
+          Bắt đầu hành trình
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <img src="https://mia.vn/media/uploads/blog-du-lich/mi-quang-da-nang-mon-an-tru-danh-chua-thu-xem-nhu-chua-den-da-nang-04-1636965593.jpeg">
+
+    <div class="hero-content">
+
+      <h1>Mì Quảng Đà Nẵng</h1>
+
+      <p>
+        Một tô mì nhỏ nhưng chứa đựng cả hương vị miền Trung,
+        sự chân chất của người xứ Quảng và nét văn hóa ẩm thực
+        đặc trưng mà ai đến Đà Nẵng cũng phải thử một lần.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- GIOI THIEU -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="grid-2">
+
+        <div class="content-box">
+
+          <h2 class="section-title">
+            Hương vị đặc trưng
+          </h2>
+
+          <p>
+            Mì Quảng là món ăn nổi tiếng nhất của Đà Nẵng và Quảng Nam.
+            Sợi mì được làm từ gạo xay thủ công, mềm dai và có vị thơm bùi rất riêng.
+          </p>
+
+          <p>
+            Điều đặc biệt nhất chính là phần nước lèo chỉ chan xâm xấp,
+            đậm đà từ xương, tôm, gà, nghệ và dầu điều.
+          </p>
+
+          <p>
+            Khi ăn sẽ dùng kèm rau sống, bánh tráng mè nướng,
+            đậu phộng rang và tương ớt tạo nên hương vị khó quên.
+          </p>
+
+          <div class="tag-list">
+
+            <div class="tag">Đậm đà</div>
+
+            <div class="tag">Chuẩn vị miền Trung</div>
+
+            <div class="tag">Món ăn đặc sản</div>
+
+            <div class="tag">Ăn kèm rau sống</div>
+
+          </div>
+
+        </div>
+
+        <div class="rounded-img">
+
+          <img src="https://mia.vn/media/uploads/blog-du-lich/mi-quang-da-nang-mon-an-tru-danh-chua-thu-xem-nhu-chua-den-da-nang-01-1636965593.jpeg">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CHE BIEN -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="grid-2">
+
+        <div class="rounded-img">
+
+          <img src="https://mia.vn/media/uploads/blog-du-lich/mi-quang-da-nang-mon-an-tru-danh-chua-thu-xem-nhu-chua-den-da-nang-03-1636965593.jpeg">
+
+        </div>
+
+        <div class="content-box">
+
+          <h2 class="section-title">
+            Cách chế biến
+          </h2>
+
+          <ul>
+
+            <li>
+              Gà được làm sạch, chặt miếng và ướp cùng nghệ,
+              nước mắm, tiêu và dầu điều.
+            </li>
+
+            <li>
+              Thịt được rim cho thấm gia vị trước khi nấu nước dùng.
+            </li>
+
+            <li>
+              Nước lèo được ninh từ xương, tôm và nhiều gia vị truyền thống.
+            </li>
+
+            <li>
+              Khi ăn sẽ chan ít nước dùng để giữ độ đậm đà đặc trưng.
+            </li>
+
+            <li>
+              Ăn kèm bánh tráng mè nướng giòn và rau sống tươi.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUAN NOI TIENG -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Những quán mì Quảng nổi tiếng
+      </h2>
+
+      <p class="section-desc">
+        Các địa điểm được nhiều du khách và người dân địa phương yêu thích.
+      </p>
+
+      <div class="restaurant-grid">
+
+        <!-- CARD -->
+
+        <div class="restaurant-card">
+
+          <img src="https://mia.vn/media/uploads/blog-du-lich/mi-quang-da-nang-mon-an-tru-danh-chua-thu-xem-nhu-chua-den-da-nang-04-1636965593.jpeg">
+
+          <div class="restaurant-content">
+
+            <h3>Mì Quảng 1A</h3>
+
+            <span>1A Hải Phòng, Hải Châu</span>
+
+            <p>
+              Quán mì nổi tiếng lâu năm với nước dùng đậm vị,
+              topping đầy đặn và giá cực hợp lý.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="restaurant-card">
+
+          <img src="https://mia.vn/media/uploads/blog-du-lich/mi-quang-da-nang-mon-an-tru-danh-chua-thu-xem-nhu-chua-den-da-nang-06-1636965594.jpeg">
+
+          <div class="restaurant-content">
+
+            <h3>Mì Quảng Gạo</h3>
+
+            <span>53 Quang Trung, Hải Châu</span>
+
+            <p>
+              Chuẩn vị xứ Quảng với gà vàng ươm,
+              bánh tráng giòn thơm và rau sống tươi.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="restaurant-card">
+
+          <img src="https://mia.vn/media/uploads/blog-du-lich/mi-quang-da-nang-mon-an-tru-danh-chua-thu-xem-nhu-chua-den-da-nang-07-1636965594.jpeg">
+
+          <div class="restaurant-content">
+
+            <h3>Mì Quảng Tam Kỳ</h3>
+
+            <span>51 Thái Thị Bôi, Thanh Khê</span>
+
+            <p>
+              Hương vị truyền thống lâu đời,
+              tô mì nóng hổi với phần gà cực kỳ đậm đà.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUOTE -->
+
+  <section class="quote-section">
+
+    <h2>
+      “Chưa thử mì Quảng xem như chưa đến Đà Nẵng.”
+    </h2>
+
+    <p>
+      Một món ăn dân dã nhưng chứa đựng nét đẹp văn hóa,
+      sự mộc mạc và niềm tự hào của người dân xứ Quảng.
+    </p>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+ 
+    <div class="container footer-wrapper">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          Go<span>Plan</span>
+        </div>
+
+        <p>
+          Nền tảng du lịch tự túc giúp bạn
+          khám phá Đà Nẵng như người bản địa.
+        </p>
+
+        <div class="socials">
+
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Khám phá</h4>
+
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestays.html">Homestay</a>
+        <a href="experiences.html">Ẩm thực local</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Hỗ trợ</h4>
+
+        <a href="#">Liên hệ</a>
+        <a href="#">FAQ</a>
+        <a href="#">Chính sách</a>
+        <a href="#">Điều khoản</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h4>Hotline 24/7</h4>
+
+        <p>Zalo / WhatsApp Support</p>
+
+        <h3>+84 354 420 265</h3>
+
+        <span>support@goplan.vn</span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2025 GoPlan.
+      Designed for Local Travelers.
+
+    </div>
+
+  </footer>
+<!-- AUTH MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+  <div class="login-overlay" id="closeLogin"></div>
+
+  <div class="login-box">
+
+    <!-- CLOSE -->
+
+    <button class="close-login" id="closeBtn">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <!-- LOGIN FORM -->
+
+    <div class="auth-form active" id="loginForm">
+
+      <div class="login-header">
+
+        <h2>
+          Đăng nhập GoPlan
+        </h2>
+
+        <p>
+          Tiếp tục hành trình khám phá Đà Nẵng
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="loginName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="loginEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="loginPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="loginSubmitBtn">
+
+          Đăng nhập
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng nhập với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng nhập với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng nhập với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <div class="register-link">
+
+        Chưa có tài khoản?
+
+        <a href="#" id="showRegister">
+          Đăng ký ngay
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- REGISTER FORM -->
+
+    <div class="auth-form" id="registerForm">
+
+      <div class="login-header">
+
+        <h2>
+          Tạo tài khoản mới
+        </h2>
+
+        <p>
+          Bắt đầu trải nghiệm GoPlan như người bản địa
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="registerEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="registerPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Xác nhận mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="confirmPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="registerSubmitBtn">
+
+          Đăng ký tài khoản
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng ký với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng ký với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng ký với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <!-- TERMS -->
+
+      <div class="terms-text">
+
+        Bằng cách tiếp tục, bạn đồng ý với
+        <a href="#">
+          Điều khoản dịch vụ
+        </a>
+        của GoPlan và xác nhận rằng bạn đã đọc
+        <a href="#">
+          Chính sách quyền riêng tư
+        </a>
+        của chúng tôi.
+
+      </div>
+
+      <div class="register-link">
+
+        Đã có tài khoản?
+
+        <a href="#" id="showLogin">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

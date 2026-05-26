@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Trải Nghiệm Đà Nẵng | GoPlan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Sign-In Library -->
+  <script src="https://accounts.google.com/gapi/client:platform.js" async defer></script>
+</head>
+
+<body>
+
+ <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+     <a href="index.html" class="logo">
+        Go<span>Plan</span>
+     </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">Khám phá</a>
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="experiences.html">Trải nghiệm</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="nav-actions">
+
+        <button class="login-btn" id="openLogin">
+
+            <i class="fa-regular fa-user"></i>
+
+                Đăng nhập
+
+        </button>
+
+        <button class="avatar-btn" id="avatarBtn" style="display: none;">
+
+            <div class="avatar">
+              <span id="avatarText"></span>
+            </div>
+
+        </button>
+
+        <a href="itinerary.html" class="btn-primary">
+          Bắt đầu hành trình
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <main class="experience-page">
+
+  <!-- HERO -->
+
+  <section class="experience-hero">
+
+    <div class="container">
+
+      <div class="experience-hero-content">
+
+        <span class="hero-mini-tag">
+          Khám phá Đà Nẵng như người bản địa
+        </span>
+
+        <h1>
+          Những trải nghiệm đáng nhớ nhất tại Đà Nẵng
+        </h1>
+
+        <p>
+          Từ biển xanh, bán đảo hoang sơ đến thiên đường ẩm thực địa phương.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HAI CHAU -->
+
+  <section class="district-section">
+
+    <div class="container">
+
+      <div class="district-header">
+
+        <span>Quận Hải Châu</span>
+
+        <h2>
+          Trung tâm văn hóa & thiên đường ẩm thực
+        </h2>
+
+      </div>
+
+      <div class="district-grid">
+
+        <div class="district-card">
+
+          <img src="https://images2.thanhnien.vn/528068263637045248/2025/6/18/the-legend-danang-1-17502421275011965589401.jpg">
+
+          <div class="district-content">
+
+            <h3>Địa điểm nổi bật</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="CauRong.html">
+                  Cầu Rồng
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Nhà thờ Con Gà
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Bảo tàng Chăm
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Công viên APEC
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Chợ Hàn & Chợ Cồn
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="district-card food-card">
+
+          <img src="https://mia.vn/media/uploads/blog-du-lich/mi-quang-da-nang-mon-an-tru-danh-chua-thu-xem-nhu-chua-den-da-nang-03-1636965593.jpeg">
+
+          <div class="district-content">
+
+            <h3>Đặc sản nổi tiếng</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="Miquang.html">
+                  Mì Quảng
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Bánh tráng cuốn thịt heo
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Cơm gà Đà Nẵng
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Ốc hút chợ Cồn
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Kem bơ Cô Vân
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SON TRA -->
+
+  <section class="district-section alt-bg">
+
+    <div class="container">
+
+      <div class="district-header">
+
+        <span>Quận Sơn Trà</span>
+
+        <h2>
+          Bán đảo xanh & thiên đường hải sản
+        </h2>
+
+      </div>
+
+      <div class="district-grid">
+
+        <div class="district-card">
+
+          <img src="https://ik.imagekit.io/tvlk/blog/2025/03/chua-linh-ung-ba-na-1-1024x682.jpeg?tr=q-70,c-at_max,w-1000,h-600">
+
+          <div class="district-content">
+
+            <h3>Địa điểm nổi bật</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="#">
+                  Chùa Linh Ứng
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Đỉnh Bàn Cờ
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Mũi Nghê
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Bãi Rạng
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Cầu tình yêu
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="district-card food-card">
+
+          <img src="https://danangfantasticity.com/wp-content/uploads/2015/10/banh-xeo.jpg">
+
+          <div class="district-content">
+
+            <h3>Đặc sản nổi tiếng</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="#">
+                  Hải sản tươi sống
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Bánh xèo nem lụi
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Đồ nướng chợ đêm
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Ghẹ rang me
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Chip chip hấp sả
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- NGU HANH SON -->
+
+  <section class="district-section">
+
+    <div class="container">
+
+      <div class="district-header">
+
+        <span>Quận Ngũ Hành Sơn</span>
+
+        <h2>
+          Du lịch tâm linh & nghỉ dưỡng biển
+        </h2>
+
+      </div>
+
+      <div class="district-grid">
+
+        <div class="district-card">
+
+          <img src="https://danangfantasticity.com/wp-content/uploads/2025/08/danh-thang-ngu-hanh-son-da-nang-chua-quan-the-am.jpg">
+
+          <div class="district-content">
+
+            <h3>Địa điểm nổi bật</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="#">
+                  Ngũ Hành Sơn
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Động Huyền Không
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Làng đá Non Nước
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Biển Non Nước
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Bắc Mỹ An
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="district-card food-card">
+
+          <img src="https://vivulyson.com/uploads/images/blog/xem-an-choi/75/cach-nau-xu-xoa-tu-rong-bien-ly-son-2.jpg">
+
+          <div class="district-content">
+
+            <h3>Đặc sản nổi tiếng</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="#">
+                  Bê thui Cầu Mống
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Bánh khô mè
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Xu xoa biển
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Rau câu chân vịt
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LIEN CHIEU -->
+
+  <section class="district-section alt-bg">
+
+    <div class="container">
+
+      <div class="district-header">
+
+        <span>Quận Liên Chiểu</span>
+
+        <h2>
+          Đèo Hải Vân & đặc sản Nam Ô
+        </h2>
+
+      </div>
+
+      <div class="district-grid">
+
+        <div class="district-card">
+
+          <img src="https://danangbest.com/upload_content/bai-bien-nam-o-da-nang-1.webp">
+
+          <div class="district-content">
+
+            <h3>Địa điểm nổi bật</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="#">
+                  Đèo Hải Vân
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Làng Vân
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Rạn Nam Ô
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Biển Nam Ô
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="district-card food-card">
+
+          <img src="https://static.vinwonders.com/2023/01/optimize_goi-ca-nam-o-4.jpg">
+
+          <div class="district-content">
+
+            <h3>Đặc sản nổi tiếng</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="#">
+                  Gỏi cá Nam Ô
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Nước mắm Nam Ô
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Hải sản ven biển
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HOA VANG -->
+
+  <section class="district-section">
+
+    <div class="container">
+
+      <div class="district-header">
+
+        <span>Huyện Hòa Vang</span>
+
+        <h2>
+          Thiên nhiên sinh thái & trải nghiệm núi rừng
+        </h2>
+
+      </div>
+
+      <div class="district-grid">
+
+        <div class="district-card">
+
+          <img src="https://asiaholiday.com.vn/pic/Tour/du-lich-da-nang-ba-na-hills_4865_HasThumb.jpg">
+
+          <div class="district-content">
+
+            <h3>Địa điểm nổi bật</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="#">
+                  Bà Nà Hills
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Núi Thần Tài
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Hòa Phú Thành
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Hồ Đồng Nghệ
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Làng Cơ Tu
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="district-card food-card">
+
+          <img src="https://static.vinwonders.com/production/2025/02/com-lam-ga-nuong-o-sai-gon.jpg">
+
+          <div class="district-content">
+
+            <h3>Đặc sản nổi tiếng</h3>
+
+            <ul class="location-list">
+              <li>
+                <a href="#">
+                  Gà nướng cơm lam
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Bánh tráng Túy Loan
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Cá suối nướng
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Rau rừng
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+<!-- EXPERIENCE FEATURES -->
+
+<section class="experience-feature-section">
+
+  <div class="container">
+
+    <div class="experience-feature-grid">
+
+      <!-- ITEM -->
+
+      <div class="experience-feature-card">
+
+        <div class="feature-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <h3>Địa điểm nổi bật</h3>
+
+        <p>
+          Các địa danh nổi tiếng ở Đà Nẵng
+          mà mọi người yêu thích.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="experience-feature-card">
+
+        <div class="feature-icon">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+
+        <h3>Ẩm thực bản địa</h3>
+
+        <p>
+          Ăn đúng quán local, giá thật và chuẩn vị Đà Nẵng.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="experience-feature-card">
+
+        <div class="feature-icon">
+          <i class="fa-solid fa-camera"></i>
+        </div>
+
+        <h3>Check-in đẹp</h3>
+
+        <p>
+          Những góc chụp ảnh đẹp, ít đông và cực chill.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="experience-feature-card">
+
+        <div class="feature-icon">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <h3>Trải nghiệm thật</h3>
+
+        <p>
+          Không tour guide, tự do tận hưởng chuyến đi theo cách riêng.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-wrapper">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          Go<span>Plan</span>
+        </div>
+
+        <p>
+          Nền tảng du lịch tự túc giúp bạn
+          khám phá Đà Nẵng như người bản địa.
+        </p>
+
+        <div class="socials">
+
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Khám phá</h4>
+
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="#">Ẩm thực local</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Hỗ trợ</h4>
+
+        <a href="#">Liên hệ</a>
+        <a href="#">FAQ</a>
+        <a href="#">Chính sách</a>
+        <a href="#">Điều khoản</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h4>Hotline 24/7</h4>
+
+        <p>Zalo / WhatsApp Support</p>
+
+        <h3>+84 354 420 265</h3>
+
+        <span>support@goplan.vn</span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2025 GoPlan.
+      Designed for Local Travelers.
+
+    </div>
+
+  </footer>
+ <!-- AUTH MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+  <div class="login-overlay" id="closeLogin"></div>
+
+  <div class="login-box">
+
+    <!-- CLOSE -->
+
+    <button class="close-login" id="closeBtn">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <!-- LOGIN FORM -->
+
+    <div class="auth-form active" id="loginForm">
+
+      <div class="login-header">
+
+        <h2>
+          Đăng nhập GoPlan
+        </h2>
+
+        <p>
+          Tiếp tục hành trình khám phá Đà Nẵng
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="loginName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="loginEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="loginPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="loginSubmitBtn">
+
+          Đăng nhập
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng nhập với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng nhập với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng nhập với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <div class="register-link">
+
+        Chưa có tài khoản?
+
+        <a href="#" id="showRegister">
+          Đăng ký ngay
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- REGISTER FORM -->
+
+    <div class="auth-form" id="registerForm">
+
+      <div class="login-header">
+
+        <h2>
+          Tạo tài khoản mới
+        </h2>
+
+        <p>
+          Bắt đầu trải nghiệm GoPlan như người bản địa
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="registerEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="registerPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Xác nhận mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="confirmPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="registerSubmitBtn">
+
+          Đăng ký tài khoản
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng ký với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng ký với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng ký với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <!-- TERMS -->
+
+      <div class="terms-text">
+
+        Bằng cách tiếp tục, bạn đồng ý với
+        <a href="#">
+          Điều khoản dịch vụ
+        </a>
+        của GoPlan và xác nhận rằng bạn đã đọc
+        <a href="#">
+          Chính sách quyền riêng tư
+        </a>
+        của chúng tôi.
+
+      </div>
+
+      <div class="register-link">
+
+        Đã có tài khoản?
+
+        <a href="#" id="showLogin">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

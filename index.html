@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>GoPlan - Live Like A Local</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<!-- Google Sign-In Library -->
+  <script src="https://accounts.google.com/gapi/client:platform.js" async defer></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+     <a href="index.html" class="logo">
+        Go<span>Plan</span>
+     </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">Khám phá</a>
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="experiences.html">Trải nghiệm</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="nav-actions">
+
+        <button class="login-btn" id="openLogin">
+
+            <i class="fa-regular fa-user"></i>
+
+                Đăng nhập
+
+        </button>
+
+        <button class="avatar-btn" id="avatarBtn" style="display: none;">
+
+            <div class="avatar">
+              <span id="avatarText"></span>
+            </div>
+
+        </button>
+
+
+        <a href="itinerary.html" class="btn-primary">
+          Bắt đầu hành trình
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="hero-badge">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          Live Like A Local - Đà Nẵng
+
+        </div>
+
+        <h1>
+          Dự án GoPlan <br>
+          Trải nghiệm tour du lịch như người bản địa
+        </h1>
+
+        <p>
+          Tự do khám phá mọi góc khuất Đà Nẵng,
+          giảm chi phí trung gian,
+          làm chủ hành trình theo cách riêng của bạn.
+        </p>
+
+        <!-- SEARCH BOX -->
+
+<div class="search-box">
+
+  <i class="fa-solid fa-magnifying-glass"></i>
+
+  <div class="search-dropdown">
+
+    <input 
+      type="text"
+      placeholder="Nơi nào bạn muốn đến nhất tại Đà Nẵng?"
+      readonly
+      id="locationInput"
+    >
+
+    <div class="dropdown-list" id="dropdownList">
+
+      <div class="dropdown-item">
+        <i class="fa-solid fa-location-dot"></i>
+        Quận Hải Châu
+      </div>
+
+      <div class="dropdown-item">
+        <i class="fa-solid fa-location-dot"></i>
+        Quận Sơn Trà
+      </div>
+
+      <div class="dropdown-item">
+        <i class="fa-solid fa-location-dot"></i>
+        Quận Ngũ Hành Sơn
+      </div>
+
+      <div class="dropdown-item">
+        <i class="fa-solid fa-location-dot"></i>
+        Quận Liên Chiểu
+      </div>
+
+      <div class="dropdown-item">
+        <i class="fa-solid fa-location-dot"></i>
+        Huyện Hòa Vang
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="btn-primary">
+    Tìm trải nghiệm
+  </button>
+
+</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VALUE -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Vì sao chọn GoPlan?
+        </h2>
+
+        <p>
+          Trải nghiệm Đà Nẵng chân thật như người địa phương.
+        </p>
+
+      </div>
+
+      <div class="value-grid">
+
+        <div class="value-card">
+
+          <i class="fa-solid fa-house"></i>
+
+          <h3>
+            Live Like a Local
+          </h3>
+
+          <p>
+            Kết nối với văn hóa bản địa,
+            homestay thật sự địa phương.
+          </p>
+
+        </div>
+
+        <div class="value-card">
+
+          <i class="fa-solid fa-wallet"></i>
+
+          <h3>
+            Zero Intermediaries
+          </h3>
+
+          <p>
+            Không phí tour guide trung gian,
+            tiết kiệm tối đa.
+          </p>
+
+        </div>
+
+        <div class="value-card">
+
+          <i class="fa-solid fa-route"></i>
+
+          <h3>
+            Total Autonomy
+          </h3>
+
+          <p>
+            Làm chủ lịch trình bằng các công cụ số hiện đại.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about-section">
+
+    <div class="container about-wrapper">
+
+      <div class="about-image">
+
+        <img
+          src="https://static.vinwonders.com/2022/04/cau-rong-da-nang-1-1.jpg"
+          alt="Danang" />
+
+      </div>
+
+      <div class="about-content">
+
+        <span class="section-tag">
+          Về GoPlan
+        </span>
+
+        <h2>
+          Du lịch không chỉ là check-in.
+          Mà nó còn đưa bạn đến gần với những giá trị văn hoá mới mẻ.
+        </h2>
+
+        <p>
+          GoPlan được tạo ra dành cho những người yêu trải nghiệm tự do,
+          muốn khám phá Đà Nẵng theo cách chân thật nhất —
+          không tour guide gò bó,
+          không lịch trình công nghiệp,
+          chỉ còn bạn và hành trình của riêng mình.
+        </p>
+
+        <div class="about-features">
+
+          <div class="feature-item">
+            <i class="fa-solid fa-location-dot"></i>
+            Hidden Local Spots
+          </div>
+
+          <div class="feature-item">
+            <i class="fa-solid fa-house"></i>
+            Authentic Homestays
+          </div>
+
+          <div class="feature-item">
+            <i class="fa-solid fa-motorcycle"></i>
+            Free & Easy Experience
+          </div>
+
+        </div>
+
+        <a href="#" class="btn-primary">
+          Khám phá hành trình
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- DESTINATIONS -->
+
+<section class="destination-section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Địa điểm nổi bật
+      </h2>
+
+      <p>
+        Những góc Đà Nẵng đẹp nhất dành cho người thích trải nghiệm bản địa.
+      </p>
+
+    </div>
+
+    <div class="destination-grid">
+
+      <div class="destination-card">
+
+        <img
+          src="https://static.vinwonders.com/production/hai-dang-ke-ga-banner.jpg"
+          alt="Son Tra" />
+
+        <div class="destination-content">
+
+          <span>Sơn Trà</span>
+
+          <h3>Mũi Nghê & Hải đăng</h3>
+
+          <p>
+            Cung đường biển đẹp nhất Đà Nẵng,
+            ngắm bình minh như dân local.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="destination-card">
+
+        <img
+          src="https://static.vinwonders.com/2022/05/hoi-an-ve-dem-thumb.jpg"
+          alt="Hoi An" />
+
+        <div class="destination-content">
+
+          <span>Hội An</span>
+
+          <h3>Phố cổ về đêm</h3>
+
+          <p>
+            Thả hoa đăng,
+            uống nước Mót,
+            trải nghiệm Hội An thật chậm.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="destination-card">
+
+        <img
+          src="https://nhuminhplazahotel.com/wp-content/uploads/2023/09/review-deo-hai-van-2.jpg"
+          alt="Hai Van" />
+
+        <div class="destination-content">
+
+          <span>Hải Vân</span>
+
+          <h3>Đèo Hải Vân</h3>
+
+          <p>
+            Cà phê view biển,
+            roadtrip chill cùng bạn bè.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ITINERARY ROADMAP -->
+
+<section class="itinerary-section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Lịch trình 4 ngày 3 đêm
+      </h2>
+
+      <p>
+        Hành trình khám phá Đà Nẵng tự túc theo phong cách sống chậm.
+      </p>
+
+    </div>
+
+    <div class="itinerary-roadmap">
+
+      <!-- DAY 1 -->
+
+      <div class="roadmap-card">
+
+        <div class="roadmap-number">
+          01
+        </div>
+
+        <div class="roadmap-content">
+
+          <span>Day 1</span>
+
+          <h3>
+            Nhập nhịp Đà Nẵng & Chill biển
+          </h3>
+
+          <ul>
+
+            <li>
+              Check-in homestay An Thượng
+            </li>
+
+            <li>
+              Ăn Mì Quảng local
+            </li>
+
+            <li>
+              Sơn Trà - Chùa Linh Ứng
+            </li>
+
+            <li>
+              Chill Mỹ Khê & Helio Night Market
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- DAY 2 -->
+
+      <div class="roadmap-card">
+
+        <div class="roadmap-number">
+          02
+        </div>
+
+        <div class="roadmap-content">
+
+          <span>Day 2</span>
+
+          <h3>
+            Hội An thật chậm
+          </h3>
+
+          <ul>
+
+            <li>
+              Khám phá Ngũ Hành Sơn
+            </li>
+
+            <li>
+              Hoàng hôn Sông Hoài
+            </li>
+
+            <li>
+              Thả hoa đăng Hội An
+            </li>
+
+            <li>
+              Cao Lầu & Nước Mót
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- DAY 3 -->
+
+      <div class="roadmap-card">
+
+        <div class="roadmap-number">
+          03
+        </div>
+
+        <div class="roadmap-content">
+
+          <span>Day 3</span>
+
+          <h3>
+            Hải Vân & Nam Ô Local Trip
+          </h3>
+
+          <ul>
+
+            <li>
+              Café đèo Hải Vân view biển
+            </li>
+
+            <li>
+              Làng chài Nam Ô
+            </li>
+
+            <li>
+              Bãi rêu sống ảo
+            </li>
+
+            <li>
+              Ăn local tại Chợ Cồn
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- DAY 4 -->
+
+      <div class="roadmap-card">
+
+        <div class="roadmap-number">
+          04
+        </div>
+
+        <div class="roadmap-content">
+
+          <span>Day 4</span>
+
+          <h3>
+            Sống chậm trước khi về
+          </h3>
+
+          <ul>
+
+            <li>
+              Ngắm bình minh Mỹ Khê
+            </li>
+
+            <li>
+              Xem ngư dân kéo lưới
+            </li>
+
+            <li>
+              Mua quà ở Chợ Hàn
+            </li>
+
+            <li>
+              Kết thúc hành trình local
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HOMESTAY -->
+
+<section class="homestay-section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Homestay bản địa
+      </h2>
+
+      <p>
+        Không gian sống gần gũi như người Đà Nẵng thật sự.
+      </p>
+
+    </div>
+
+    <div class="homestay-grid">
+
+      <div class="homestay-card">
+
+        <img
+          src="https://i.travelapi.com/hotels/66000000/65370000/65366400/65366311/31d76bff_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+          alt="Homestay" />
+
+        <div class="homestay-content">
+
+          <h3>
+            Chi House Da Nang
+          </h3>
+
+          <span>
+            Sơn Trà • gần biển
+          </span>
+
+          <p>
+            Vibe tối giản,
+            gần café và khu Tây.
+          </p>
+
+          <div class="price-row">
+
+            <h4>1,626,337đ / đêm</h4>
+
+            <button onclick="window.location.href='Chi House Da Nang-homestay.html'">
+              Đặt ngay
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="homestay-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1974&auto=format&fit=crop"
+          alt="Homestay" />
+
+        <div class="homestay-content">
+
+          <h3>
+            Melia Vinpearl Đà Nẵng Riverfront
+          </h3>
+
+          <span>
+            Sơn Trà • yên tĩnh
+          </span>
+
+          <p>
+            Gần thiên nhiên,
+            thích hợp nghỉ dưỡng nhẹ nhàng.
+          </p>
+
+          <div class="price-row">
+
+            <h4>1,712,951đ / đêm</h4>
+
+            <button onclick="window.location.href='Melia Vinpearl.html'">
+              Đặt ngay
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- UTILITIES -->
+
+<section class="utility-section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Tiện ích thông minh
+      </h2>
+
+      <p>
+        Công cụ hỗ trợ hành trình số hóa hoàn toàn.
+      </p>
+
+    </div>
+
+    <div class="utility-grid">
+
+      <div class="utility-card">
+
+        <i class="fa-solid fa-concierge-bell"></i>
+
+        <h3>
+          Dịch vụ nhanh chóng
+        </h3>
+
+        <p>
+          Booking homestay, tour,
+          vé tham quan,
+          voucher điện tử tiện lợi.
+        </p>
+
+      </div>
+
+      <div class="utility-card">
+
+        <i class="fa-solid fa-list-check"></i>
+
+        <h3>
+          Digital Checklist
+        </h3>
+
+        <p>
+          Kiểm tra giấy tờ,
+          đồ cá nhân,
+          vật dụng cần thiết trước chuyến đi.
+        </p>
+
+      </div>
+
+      <div class="utility-card">
+
+        <i class="fa-solid fa-headset"></i>
+
+        <h3>
+          Remote Support
+        </h3>
+
+        <p>
+          Hotline 24/7 hỗ trợ
+          thời tiết,
+          lạc đường,
+          thay đổi lịch trình.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-wrapper">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          Go<span>Plan</span>
+        </div>
+
+        <p>
+          Nền tảng du lịch tự túc giúp bạn
+          khám phá Đà Nẵng như người bản địa.
+        </p>
+
+        <div class="socials">
+
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Khám phá</h4>
+
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestays.html">Homestay</a>
+        <a href="experiences.html">Ẩm thực local</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Hỗ trợ</h4>
+
+        <a href="#">Liên hệ</a>
+        <a href="#">FAQ</a>
+        <a href="#">Chính sách</a>
+        <a href="#">Điều khoản</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h4>Hotline 24/7</h4>
+
+        <p>Zalo / WhatsApp Support</p>
+
+        <h3>+84 354 420 265</h3>
+
+        <span>support@goplan.vn</span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2025 GoPlan.
+      Designed for Local Travelers.
+
+    </div>
+
+  </footer>
+<!-- AUTH MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+  <div class="login-overlay" id="closeLogin"></div>
+
+  <div class="login-box">
+
+    <!-- CLOSE -->
+
+    <button class="close-login" id="closeBtn">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <!-- LOGIN FORM -->
+
+    <div class="auth-form active" id="loginForm">
+
+      <div class="login-header">
+
+        <h2>
+          Đăng nhập GoPlan
+        </h2>
+
+        <p>
+          Tiếp tục hành trình khám phá Đà Nẵng
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="loginName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="loginEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="loginPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="loginSubmitBtn">
+
+          Đăng nhập
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng nhập với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng nhập với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng nhập với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <div class="register-link">
+
+        Chưa có tài khoản?
+
+        <a href="#" id="showRegister">
+          Đăng ký ngay
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- REGISTER FORM -->
+
+    <div class="auth-form" id="registerForm">
+
+      <div class="login-header">
+
+        <h2>
+          Tạo tài khoản mới
+        </h2>
+
+        <p>
+          Bắt đầu trải nghiệm GoPlan như người bản địa
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="registerEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="registerPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Xác nhận mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="confirmPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="registerSubmitBtn">
+
+          Đăng ký tài khoản
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng ký với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng ký với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng ký với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <!-- TERMS -->
+
+      <div class="terms-text">
+
+        Bằng cách tiếp tục, bạn đồng ý với
+        <a href="#">
+          Điều khoản dịch vụ
+        </a>
+        của GoPlan và xác nhận rằng bạn đã đọc
+        <a href="#">
+          Chính sách quyền riêng tư
+        </a>
+        của chúng tôi.
+
+      </div>
+
+      <div class="register-link">
+
+        Đã có tài khoản?
+
+        <a href="#" id="showLogin">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+<script>
+
+const locationInput =
+  document.getElementById('locationInput');
+
+const dropdownList =
+  document.getElementById('dropdownList');
+
+const dropdownItems =
+  document.querySelectorAll('.dropdown-item');
+
+/* OPEN DROPDOWN */
+
+locationInput.addEventListener('click', () => {
+
+  dropdownList.classList.toggle('show');
+
+});
+
+/* SELECT ITEM */
+
+dropdownItems.forEach(item => {
+
+  item.addEventListener('click', () => {
+
+    locationInput.value =
+      item.innerText.trim();
+
+    dropdownList.classList.remove('show');
+
+  });
+
+});
+
+/* CLICK OUTSIDE */
+
+document.addEventListener('click', (e) => {
+
+  if(
+    !e.target.closest('.search-dropdown')
+  ){
+    dropdownList.classList.remove('show');
+  }
+
+});
+
+</script>
+</body>
+
+</html>

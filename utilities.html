@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Tiện Ích Du Lịch | GoPlan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Sign-In Library -->
+  <script src="https://accounts.google.com/gapi/client:platform.js" async defer></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+     <a href="index.html" class="logo">
+        Go<span>Plan</span>
+     </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">Khám phá</a>
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="experiences.html">Trải nghiệm</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="nav-actions">
+
+        <button class="login-btn" id="openLogin">
+
+            <i class="fa-regular fa-user"></i>
+
+                Đăng nhập
+
+        </button>
+
+        <button class="avatar-btn" id="avatarBtn" style="display: none;">
+
+            <div class="avatar">
+              <span id="avatarText"></span>
+            </div>
+
+        </button>
+
+        <a href="itinerary.html" class="btn-primary">
+          Bắt đầu hành trình
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="utility-hero">
+
+    <div class="container">
+
+      <div class="utility-hero-content">
+
+        <div class="hero-mini-tag">
+          Smart Travel Tools
+        </div>
+
+        <h1>
+          Chuẩn bị chuyến đi thật dễ dàng
+        </h1>
+
+        <p>
+          GoPlan giúp bạn kiểm tra giấy tờ, đồ dùng cần thiết
+          và tạo danh sách trải nghiệm cá nhân trước chuyến đi.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ <!-- CHECKLIST -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Checklist trước chuyến đi
+      </h2>
+
+      <p>
+        Đừng quên những vật dụng quan trọng nhé.
+      </p>
+
+    </div>
+
+    <div class="checklist-grid">
+
+      <!-- ITEM -->
+
+      <div class="check-card">
+
+        <label class="check-item">
+
+          <input type="checkbox">
+
+          <span class="check-circle">
+            <i class="fa-solid fa-check"></i>
+          </span>
+
+          <span class="check-text">
+            CCCD / Passport
+          </span>
+
+        </label>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="check-card">
+
+        <label class="check-item">
+
+          <input type="checkbox">
+
+          <span class="check-circle">
+            <i class="fa-solid fa-check"></i>
+          </span>
+
+          <span class="check-text">
+            Vé máy bay / Booking
+          </span>
+
+        </label>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="check-card">
+
+        <label class="check-item">
+
+          <input type="checkbox">
+
+          <span class="check-circle">
+            <i class="fa-solid fa-check"></i>
+          </span>
+
+          <span class="check-text">
+            Kem chống nắng
+          </span>
+
+        </label>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="check-card">
+
+        <label class="check-item">
+
+          <input type="checkbox">
+
+          <span class="check-circle">
+            <i class="fa-solid fa-check"></i>
+          </span>
+
+          <span class="check-text">
+            Sạc điện thoại / Powerbank
+          </span>
+
+        </label>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="check-card">
+
+        <label class="check-item">
+
+          <input type="checkbox">
+
+          <span class="check-circle">
+            <i class="fa-solid fa-check"></i>
+          </span>
+
+          <span class="check-text">
+            Thuốc cá nhân
+          </span>
+
+        </label>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="check-card">
+
+        <label class="check-item">
+
+          <input type="checkbox">
+
+          <span class="check-circle">
+            <i class="fa-solid fa-check"></i>
+          </span>
+
+          <span class="check-text">
+            Đồ bơi / Kính mát
+          </span>
+
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- TODO -->
+
+  <section class="todo-section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Danh sách trải nghiệm cá nhân</h2>
+
+        <p>
+          Tạo những điều bạn muốn làm tại Đà Nẵng.
+        </p>
+
+      </div>
+
+      <div class="todo-wrapper">
+
+        <div class="todo-input-box">
+
+          <input
+            type="text"
+            id="todoInput"
+            placeholder="Ví dụ: Ngắm bình minh ở Mỹ Khê..."
+          >
+
+          <button id="addTodoBtn">
+            <i class="fa-solid fa-plus"></i>
+            Thêm
+          </button>
+
+        </div>
+
+        <ul id="todoList" class="todo-list"></ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SMART UTILITIES -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Tiện ích thông minh khác</h2>
+
+        <p>
+          Hỗ trợ bạn trong suốt hành trình.
+        </p>
+
+      </div>
+
+      <div class="utility-feature-grid">
+
+        <div class="utility-feature-card">
+
+          <i class="fa-solid fa-wallet"></i>
+
+          <h3>Giao dịch nhanh</h3>
+
+          <p>
+            Thanh toán dễ dàn, hỗ trợ nhiều phương thức như thẻ, ví điện tử.
+          </p>
+
+        </div>
+
+        <div class="utility-feature-card">
+
+          <i class="fa-solid fa-phone-volume"></i>
+
+          <h3>Hỗ trợ từ xa 24/7</h3>
+
+          <p>
+            Hỗ trợ Zalo / WhatsApp khi lạc đường,
+            delay chuyến bay hoặc thời tiết xấu.
+          </p>
+
+        </div>
+
+        <div class="utility-feature-card">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <h3>Google Maps </h3>
+
+          <p>
+            Mở nhanh các địa điểm nổi bật bằng Google Maps.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+ <footer>
+
+    <div class="container footer-wrapper">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          Go<span>Plan</span>
+        </div>
+
+        <p>
+          Nền tảng du lịch tự túc giúp bạn
+          khám phá Đà Nẵng như người bản địa.
+        </p>
+
+        <div class="socials">
+
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Khám phá</h4>
+
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="experiences.html">Ẩm thực local</a>
+        <a href="#">Tiện ích</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Hỗ trợ</h4>
+
+        <a href="#">Liên hệ</a>
+        <a href="#">FAQ</a>
+        <a href="#">Chính sách</a>
+        <a href="#">Điều khoản</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h4>Hotline 24/7</h4>
+
+        <p>Zalo / WhatsApp Support</p>
+
+        <h3>+84 354 420 265</h3>
+
+        <span>support@goplan.vn</span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2025 GoPlan.
+      Designed for Local Travelers.
+
+    </div>
+
+  </footer>
+<!-- AUTH MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+  <div class="login-overlay" id="closeLogin"></div>
+
+  <div class="login-box">
+
+    <!-- CLOSE -->
+
+    <button class="close-login" id="closeBtn">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <!-- LOGIN FORM -->
+
+    <div class="auth-form active" id="loginForm">
+
+      <div class="login-header">
+
+        <h2>
+          Đăng nhập GoPlan
+        </h2>
+
+        <p>
+          Tiếp tục hành trình khám phá Đà Nẵng
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="loginName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="loginEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="loginPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="loginSubmitBtn">
+
+          Đăng nhập
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng nhập với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng nhập với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng nhập với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <div class="register-link">
+
+        Chưa có tài khoản?
+
+        <a href="#" id="showRegister">
+          Đăng ký ngay
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- REGISTER FORM -->
+
+    <div class="auth-form" id="registerForm">
+
+      <div class="login-header">
+
+        <h2>
+          Tạo tài khoản mới
+        </h2>
+
+        <p>
+          Bắt đầu trải nghiệm GoPlan như người bản địa
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="registerEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="registerPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Xác nhận mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="confirmPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="registerSubmitBtn">
+
+          Đăng ký tài khoản
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng ký với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng ký với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng ký với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <!-- TERMS -->
+
+      <div class="terms-text">
+
+        Bằng cách tiếp tục, bạn đồng ý với
+        <a href="#">
+          Điều khoản dịch vụ
+        </a>
+        của GoPlan và xác nhận rằng bạn đã đọc
+        <a href="#">
+          Chính sách quyền riêng tư
+        </a>
+        của chúng tôi.
+
+      </div>
+
+      <div class="register-link">
+
+        Đã có tài khoản?
+
+        <a href="#" id="showLogin">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

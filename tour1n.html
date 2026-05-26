@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Tour Đà Nẵng 3N2D | GoPlan</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"/>
+<!-- Google Sign-In Library -->
+  <script src="https://accounts.google.com/gapi/client:platform.js" async defer></script>
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Be Vietnam Pro',sans-serif;
+      background:#f8fafc;
+      color:#1e293b;
+      line-height:1.8;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    .container{
+      width:90%;
+      max-width:1250px;
+      margin:auto;
+    }
+
+    /* HERO */
+
+    .hero{
+      position:relative;
+      height:600px;
+      overflow:hidden;
+      margin-top:120px;
+    }
+
+    .hero img{
+      height:100%;
+      filter:brightness(55%);
+    }
+
+    .hero-content{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      text-align:center;
+      color:white;
+      width:90%;
+    }
+
+    .hero-content h1{
+      font-size:58px;
+      font-weight:800;
+      margin-bottom:18px;
+      line-height:1.3;
+    }
+
+    .hero-content p{
+      font-size:20px;
+      max-width:850px;
+      margin:auto;
+    }
+
+    /* TOUR INFO */
+
+    .tour-info{
+      margin-top:-80px;
+      position:relative;
+      z-index:20;
+    }
+
+    .info-wrapper{
+      background:white;
+      border-radius:28px;
+      padding:35px;
+      box-shadow:0 10px 35px rgba(0,0,0,0.08);
+
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:25px;
+    }
+
+    .info-box{
+      text-align:center;
+    }
+
+    .info-box i{
+      font-size:28px;
+      color:#f97316;
+      margin-bottom:15px;
+    }
+
+    .info-box h3{
+      font-size:17px;
+      margin-bottom:8px;
+      color:#0f172a;
+    }
+
+    .info-box p{
+      color:#64748b;
+      font-size:15px;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:80px 0;
+    }
+
+    .section-title{
+      font-size:42px;
+      font-weight:800;
+      margin-bottom:18px;
+      color:#0f172a;
+    }
+
+    .section-desc{
+      color:#64748b;
+      margin-bottom:45px;
+      max-width:850px;
+    }
+
+    /* DAY CARD */
+
+    .day-card{
+      background:white;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 8px 25px rgba(0,0,0,0.06);
+      margin-bottom:45px;
+    }
+
+    .day-banner{
+      position:relative;
+      height:380px;
+    }
+
+    .day-banner img{
+      height:100%;
+    }
+
+    .day-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,0.65),transparent);
+      display:flex;
+      align-items:flex-end;
+      padding:35px;
+    }
+
+    .day-overlay h2{
+      color:white;
+      font-size:38px;
+      font-weight:800;
+    }
+
+    .day-content{
+      padding:40px;
+    }
+
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:28px;
+    }
+
+    .timeline-item{
+      display:flex;
+      gap:20px;
+    }
+
+    .timeline-icon{
+      min-width:58px;
+      height:58px;
+      border-radius:50%;
+      background:#fff7ed;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#f97316;
+      font-size:22px;
+    }
+
+    .timeline-content h4{
+      font-size:22px;
+      margin-bottom:8px;
+      color:#0f172a;
+    }
+
+    .timeline-content p{
+      color:#475569;
+    }
+
+    /* INCLUDE */
+
+    .include-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:25px;
+      margin-top:35px;
+    }
+
+    .include-card{
+      background:white;
+      border-radius:24px;
+      padding:30px;
+      box-shadow:0 5px 18px rgba(0,0,0,0.05);
+    }
+
+    .include-card h3{
+      font-size:28px;
+      margin-bottom:20px;
+      color:#0f172a;
+    }
+
+    .include-card ul{
+      list-style:none;
+    }
+
+    .include-card li{
+      margin-bottom:15px;
+      display:flex;
+      gap:12px;
+      color:#475569;
+    }
+
+    .include-card i{
+      color:#22c55e;
+      margin-top:5px;
+    }
+
+    /* PRICE */
+
+    .price-section{
+      background:#0f172a;
+      color:white;
+      border-radius:32px;
+      padding:60px;
+      text-align:center;
+    }
+
+    .price-section h2{
+      font-size:42px;
+      margin-bottom:20px;
+    }
+
+    .price-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:25px;
+      margin-top:35px;
+    }
+
+    .price-card{
+      background:rgba(255,255,255,0.08);
+      padding:30px;
+      border-radius:24px;
+      backdrop-filter:blur(10px);
+    }
+
+    .price-card h3{
+      font-size:26px;
+      margin-bottom:18px;
+    }
+
+    .price{
+      font-size:42px;
+      font-weight:800;
+      color:#facc15;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      background:white;
+      padding:40px;
+      border-radius:28px;
+      margin-top:50px;
+      text-align:center;
+      box-shadow:0 5px 18px rgba(0,0,0,0.05);
+    }
+
+    .contact-box h2{
+      font-size:38px;
+      margin-bottom:20px;
+    }
+
+    .contact-box p{
+      color:#64748b;
+      margin-bottom:12px;
+      font-size:18px;
+    }
+
+    .hotline{
+      font-size:36px;
+      font-weight:800;
+      color:#f97316;
+      margin-top:20px;
+    }
+
+    .book-btn{
+      display:inline-block;
+      margin-top:28px;
+      background:#f97316;
+      color:white;
+      padding:18px 42px;
+      border-radius:18px;
+      font-size:18px;
+      font-weight:700;
+      transition:.3s;
+    }
+
+    .book-btn:hover{
+      background:#ea580c;
+      transform:translateY(-4px);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:992px){
+
+      .info-wrapper{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .include-grid{
+        grid-template-columns:1fr;
+      }
+
+      .price-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-content h1{
+        font-size:42px;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        height:500px;
+      }
+
+      .info-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .day-overlay h2{
+        font-size:28px;
+      }
+
+      .section-title{
+        font-size:30px;
+      }
+
+      .price-section{
+        padding:35px 25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+     <a href="index.html" class="logo">
+        Go<span>Plan</span>
+     </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">Khám phá</a>
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestay.html">Homestay</a>
+        <a href="experiences.html">Trải nghiệm</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="nav-actions">
+
+        <button class="login-btn" id="openLogin">
+
+            <i class="fa-regular fa-user"></i>
+
+                Đăng nhập
+
+        </button>
+
+        <button class="avatar-btn" id="avatarBtn" style="display: none;">
+
+            <div class="avatar">
+              <span id="avatarText"></span>
+            </div>
+
+        </button>
+
+
+        <a href="itinerary.html" class="btn-primary">
+          Bắt đầu hành trình
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <h1>
+        Tour Đà Nẵng ghép 1N
+        <br>
+        Bà Nà Hills Cầu Vàng
+      </h1>
+
+      <p>
+        Hành trình khám phá những địa điểm nổi bật nhất Đà Nẵng
+        cùng trải nghiệm thiên nhiên, văn hóa và ẩm thực đặc sắc.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- TOUR INFO -->
+
+  <section class="tour-info">
+
+    <div class="container">
+
+      <div class="info-wrapper">
+
+        <div class="info-box">
+          <i class="fa-solid fa-clock"></i>
+          <h3>Thời gian</h3>
+          <p>1 ngày</p>
+        </div>
+
+        <div class="info-box">
+          <i class="fa-solid fa-hotel"></i>
+          <h3>Lưu trú</h3>
+          <p>Khách sạn 3 - 4 sao</p>
+        </div>
+
+        <div class="info-box">
+          <i class="fa-solid fa-utensils"></i>
+          <h3>Ẩm thực</h3>
+          <p>Buffet + đặc sản địa phương</p>
+        </div>
+
+        <div class="info-box">
+          <i class="fa-solid fa-bus"></i>
+          <h3>Di chuyển</h3>
+          <p>Xe du lịch đời mới</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- NGAY 1 -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="day-card">
+
+        <div class="day-banner">
+
+          <img src="https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/e7waraff45cbnn5j959r.jpg">
+
+          <div class="day-overlay">
+            <h2>Tour Bà Nà Hills Cầu Vàng</h2>
+          </div>
+
+        </div>
+
+        <div class="day-content">
+
+          <div class="timeline">
+
+            <div class="timeline-item">
+
+              <div class="timeline-icon">
+                <i class="fa-solid fa-cable-car"></i>
+              </div>
+
+              <div class="timeline-content">
+                <h4>Cáp treo Bà Nà Hills</h4>
+                <p>
+                  <b>08h00:</b> Xe & Hướng dẫn viên đón quý khách tại khách sạn -khởi hành đi tham quan khu du lịch Bà Nà – Núi Chúa.
+                </p>
+                <p>
+                  <b>08h45:</b> Cùng nhau thưởng ngoạn khung cảnh Bà Nà trên cao bằng hệ thống cáp treo hiện đại nhất Đông Nam Á.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+              <div class="timeline-icon">
+                <i class="fa-solid fa-wine-glass"></i>
+              </div>
+
+              <div class="timeline-content">
+                <h4>Hầm rượu Debay</h4>
+                <p>
+                  Công trình cổ do người Pháp xây dựng từ năm 1923,trải qua gần một thế kỷ, hầm rượu vẫn giữ được nét hoang sơ, kì bí, là công trình duy nhất của người Pháp còn lại khá nguyên vẹn tại Bà Nà.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+              <div class="timeline-icon">
+                <i class="fa-solid fa-bridge"></i>
+              </div>
+
+              <div class="timeline-content">
+                <h4>Cầu Vàng & Chùa Linh Ứng</h4>
+                <p>
+                  <b>09h30:</b> Viếng chùa Linh Ứng Bà Nà chiêm ngưỡng tượng Phật Thích Ca cao 27m và thả mình vào khung cảnh thanh tịnh của chốn thiền môn, tham quan Vườn Lộc Uyển, Quan Âm Các. Quý khách được tham quan chụp hình, trải nghiệm cảm giác giống như băng qua thiên đường tại Cầu Vàng .
+                </p>
+              </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+              <div class="timeline-icon">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+
+              <div class="timeline-content">
+                <h4>Fantasy Park</h4>
+                <p>
+                  <b>11h00:</b> Hướng dẫn viên đưa đoàn vào tham quan khu vui chơi Fantasy Park – khu vui chơi giải trí trong nhà lớn nhất Việt Nam..
+                </p>
+                <p>
+                  <b>12h00:</b> Quý khách ăn trưa và nghỉ ngơi tại nhà hàng, thưởng ngoạn khung cảnh núi rừng, Làng Pháp, quảng trường.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+              <div class="timeline-icon">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+
+              <div class="timeline-content">
+                <h4>Núi Chúa</h4>
+                <p>
+                  <b>13h00:</b> Chinh phục đỉnh Núi Chúa – nóc nhà của thành phố, thăm viếng Lĩnh Chúa Linh Từ nằm ở độ cao 1487m, Ngắm toàn cảnh thành phố Đà Nẵng và vịnh Đà Nẵng lúc ẩn, lúc hiện dưới một biển mây trắng.
+                </p>
+                <p>
+                  <b>15h00:</b> Đón chuyến cáp và xuống lại Ga Suối Mơ kết thúc chương trình
+                </p>
+                <p>
+                <b>17h00:</b> Về lại TP Đà Nẵng, trả khách về lại điểm đón ban đầu và chào tạm biệt!
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BAO GOM -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Combo bao gồm
+      </h2>
+
+      <p class="section-desc">
+        Tất cả những dịch vụ cần thiết để bạn có một chuyến đi trọn vẹn.
+      </p>
+
+      <div class="include-grid">
+
+        <div class="include-card">
+
+          <h3>Dịch vụ bao gồm</h3>
+
+          <ul>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Xe du lịch đời mới đưa đón
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Khách sạn 3 - 4 sao
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Thưởng thức ẩm thực đặc sản địa phương
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Vé tham quan các địa điểm
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Hướng dẫn viên chuyên nghiệp
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Bảo hiểm du lịch
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="include-card">
+
+          <h3>Lưu ý</h3>
+
+          <ul>
+
+            <li>
+              <i class="fa-solid fa-circle-info"></i>
+              Không áp dụng dịp Lễ, Tết
+            </li>
+
+            <li>
+              <i class="fa-solid fa-circle-info"></i>
+              Thứ tự điểm tham quan có thể thay đổi
+            </li>
+
+            <li>
+              <i class="fa-solid fa-circle-info"></i>
+              Nhận phòng sau 14h
+            </li>
+
+            <li>
+              <i class="fa-solid fa-circle-info"></i>
+              Trả phòng trước 12h
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRICE -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="price-section">
+
+        <h2>Giá Tour</h2>
+
+        <p>
+          Combo áp dụng từ 2 khách trở lên
+        </p>
+
+        <div class="price-grid">
+
+          <div class="price-card">
+
+            <h3>Người lớn</h3>
+
+            <div class="price">
+              1.270.000đ
+            </div>
+
+          </div>
+
+          <div class="price-card">
+
+            <h3>Trẻ em từ 1m - 1m39</h3>
+
+            <div class="price">
+              1.016.000đ
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT -->
+
+      <div class="contact-box">
+
+        <h2>Đặt Tour Ngay</h2>
+
+        <p>
+          Liên hệ hotline để được tư vấn nhanh chóng
+        </p>
+
+        <div class="hotline">
+          035 442 0265
+        </div>
+        <a href="tel:0789419439" class="book-btn">
+          Gọi đặt tour
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+   <footer>
+
+    <div class="container footer-wrapper">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          Go<span>Plan</span>
+        </div>
+
+        <p>
+          Nền tảng du lịch tự túc giúp bạn
+          khám phá Đà Nẵng như người bản địa.
+        </p>
+
+        <div class="socials">
+
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Khám phá</h4>
+
+        <a href="itinerary.html">Lịch trình</a>
+        <a href="homestays.html">Homestay</a>
+        <a href="experiences.html">Ẩm thực local</a>
+        <a href="utilities.html">Tiện ích</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Hỗ trợ</h4>
+
+        <a href="#">Liên hệ</a>
+        <a href="#">FAQ</a>
+        <a href="#">Chính sách</a>
+        <a href="#">Điều khoản</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h4>Hotline 24/7</h4>
+
+        <p>Zalo / WhatsApp Support</p>
+
+        <h3>+84 354 420 265</h3>
+
+        <span>support@goplan.vn</span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2025 GoPlan.
+      Designed for Local Travelers.
+
+    </div>
+
+  </footer>
+<!-- AUTH MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+  <div class="login-overlay" id="closeLogin"></div>
+
+  <div class="login-box">
+
+    <!-- CLOSE -->
+
+    <button class="close-login" id="closeBtn">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <!-- LOGIN FORM -->
+
+    <div class="auth-form active" id="loginForm">
+
+      <div class="login-header">
+
+        <h2>
+          Đăng nhập GoPlan
+        </h2>
+
+        <p>
+          Tiếp tục hành trình khám phá Đà Nẵng
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="loginName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="loginEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="loginPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="loginSubmitBtn">
+
+          Đăng nhập
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng nhập với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng nhập với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng nhập với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <div class="register-link">
+
+        Chưa có tài khoản?
+
+        <a href="#" id="showRegister">
+          Đăng ký ngay
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- REGISTER FORM -->
+
+    <div class="auth-form" id="registerForm">
+
+      <div class="login-header">
+
+        <h2>
+          Tạo tài khoản mới
+        </h2>
+
+        <p>
+          Bắt đầu trải nghiệm GoPlan như người bản địa
+        </p>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+
+          <label>
+            Họ và tên
+          </label>
+
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Nguyễn Văn A"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Gmail hoặc số điện thoại
+          </label>
+
+          <input
+            type="text"
+            id="registerEmail"
+            placeholder="example@gmail.com"
+          />
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="registerPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <div class="input-group">
+
+          <label>
+            Xác nhận mật khẩu
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="••••••••"
+            />
+
+            <i
+              class="fa-regular fa-eye toggle-password"
+              data-target="confirmPassword"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <button class="login-submit" type="button" id="registerSubmitBtn">
+
+          Đăng ký tài khoản
+
+        </button>
+
+      </form>
+
+      <div class="divider">
+
+        <span>
+          Tiếp tục với
+        </span>
+
+      </div>
+
+      <div class="social-login">
+
+        <button class="social-btn google" title="Đăng ký với Google">
+
+          <i class="fa-brands fa-google"></i>
+
+        </button>
+
+        <button class="social-btn facebook" title="Đăng ký với Facebook">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </button>
+
+        <button class="social-btn apple" title="Đăng ký với Apple">
+
+          <i class="fa-brands fa-apple"></i>
+
+        </button>
+
+      </div>
+
+      <!-- TERMS -->
+
+      <div class="terms-text">
+
+        Bằng cách tiếp tục, bạn đồng ý với
+        <a href="#">
+          Điều khoản dịch vụ
+        </a>
+        của GoPlan và xác nhận rằng bạn đã đọc
+        <a href="#">
+          Chính sách quyền riêng tư
+        </a>
+        của chúng tôi.
+
+      </div>
+
+      <div class="register-link">
+
+        Đã có tài khoản?
+
+        <a href="#" id="showLogin">
+          Đăng nhập
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
